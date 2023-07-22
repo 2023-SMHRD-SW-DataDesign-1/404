@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+* {
+    font-family: 'Noto Sans KR', 'Malgun Gothic';
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    height: 1000px;
+}
+.div{
+    overflow: auto;
+}
+
+/* 상단부 */
+header {
+    font-family: 'HealthsetGothicLight', 'NotoSansKR';
+    background-color: white;
+    color: black;
+    padding: 10px;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 로고 */
+.logo img {
+    height: 60px;
+    width: 300px;
+    margin-left: 55%;
+
+}
+
+/* 검색창 */
+/* Styles for wrapping the search box */
+
+.main {
+    width: 20%;
+    margin: 50px auto;
+    margin-left: 20%;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 13%;
+}
+
+
+input.form-control {
+    width: 100%;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.has-search .form-control-feedback a {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: rgba(123, 43, 12, 0.863);
+    ;
+}
+
+
+
+/* 회원가입 로그인 마이페이지 */
+.user-actions {
+    position: flex;
+    margin-right: 10%;
+
+
+}
+
+.user-actions a {
+    font-size: 17px;
+    color: rgb(46, 45, 45);
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.user-actions a:first-child {
+    margin-right: 10px;
+}
+
+
+
+
+/* 피드 영역 */
+.main_feed {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.left_feed {
+
+    margin-right: 100px;
+    width: 500px;
+    height: 2000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.feed_box {
+    background-color: white;
+    width: 480px;
+    margin: 10px;
+    min-height: auto;
+}
+
+
+/* 공지사항 제목 */
+
+.notice_title{
+    font-size: 18px;
+    padding: 20px;
+    border: 1px solid rgb(233, 228, 228);
+}
+
+.notice-content{
+    border: 1px solid rgb(233, 228, 228);
+
+}
+
+/* 공지사항 사진 */
+.notice_img {
+    width: 100%;
+    height: 500px;
+}
+
+
+/* 공지사항 텍스트 */
+.notice_txt {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+
+}
+
