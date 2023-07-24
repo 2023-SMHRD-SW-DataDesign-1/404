@@ -1,5 +1,7 @@
 package chanho;
 
+import java.sql.Timestamp;
+
 public class ProductDTO {
     private int productNo;
     private String productName;
@@ -9,5 +11,6 @@ public class ProductDTO {
     private String productInfo;
     private String mainCategory;
     private String subCategory;
-
+    private Timestamp time;
+    
 }
