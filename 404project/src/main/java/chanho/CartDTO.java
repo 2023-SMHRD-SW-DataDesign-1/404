@@ -5,5 +5,6 @@ public class CartDTO {
     private int productNo;
     private int cartPrice;
     private int cartQuantity;
+    private String nickname;
 
 }
