@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.productMapper">
+  <!-- 리뷰,평점 저장 -->
+  <insert id="saveReview" parameterType="com.smhrd.model.reviewDTO">
+  insert into product values(#{review_no},#{nickname},#{review},#{reviewpoint})
+  </insert>  
+    <!-- 리뷰,평점 출력 -->
+  <select id="showReview" resultType="com.smhrd.model.reviewDTO">
+  select * from product  
+  </select>
+  
+  <insert id="addProduct" parameterType="String">
+  insert into product(item_name) values(#{item_name}) 
+  </insert>  
+ 
+ <select id="showProduct" parameterType="String" resultType="item_name">  
+  select * from user_order where id = #{user_id}
+ </select>    
+ 
+  <select id="searchProduct" parameterType="String" resultType="String" >
+  select * from product where item_name = like '${search}%'
+  </select>        
+  
+</mapper>
