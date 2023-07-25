@@ -6,10 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>채널 공지사항</title>
+    <title>나의 채널 공지사항</title>
 
     <!-- css 연결 -->
-    <link rel="stylesheet" href="./NoticeStyle.css">
+    <link rel="stylesheet" href="./MyNoticeStyle.css">
 
     <!-- 부트스트랩 CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,24 +19,51 @@
 
 <body>
 
-    <!-- 상단부 -->
-    <div class="user">
+
+
+      <!-- 상단부 -->
+      <div class="user">
 
         <a href="../SUSU/JoinMain.jsp">회원가입</a>
         <a href="../SUSU/Login.jsp">로그인</a>
 
     </div>
-
-    <header>
-
+    <header class="header">
+        <!-- 로고 -->
         <div class="logo">
-            <a href="./Main.jsp">
+            <a href="../SUSU/Main.jsp">
                 <img src="../img/logo_title.PNG" alt="logo">
 
             </a>
 
         </div>
 
+        <!-- 검색창 -->
+        <div class="main">
+
+            <!-- 검색결과에 따라 게시물 출력하도록 검색어를 전송하는 form 태그 -->
+            <form action="">
+                <div class="form-group has-search">
+
+                    <span class="fa fa-search form-control-feedback">
+                        <a href="javascript:prev_search();search_submit();">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+
+                        </a>
+                    </span>
+                    <input type="text" class="form-control" placeholder="검색어를 입력하세요">
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- 메뉴 -->
         <div class="user-actions">
             <!-- 채팅 -->
             <a href="../SUSU/Chat.jsp">
@@ -79,6 +106,7 @@
             </a>
         </div>
 
+
     </header>
 
     <!-- 브랜드 로고(배너) -->
@@ -100,40 +128,54 @@
         </div>
 
         <div class="follow-box">
+            
             <span>팔로우</span>
-            <span class="count">2.1만</span>
-            <span>팔로잉</span>
-            <span class="count">2,000</span>
+            <a href="../Channel/Follow.jsp">
+                <span class="count">2.1만</span>
+            </a>
+                <span>팔로잉</span>
+             <a href="../Channel/Follow.jsp">
+                 <span class="count">2,000</span>
 
+             </a>   
+                
         </div>
+
         <div class="button">
-            <button type="button" class="btn btn-dark">팔로우</button>
-            <button type="button" class="btn btn-light">메시지</button>
+            <!-- 편집하기 버튼을 누르면 "채널메인" 편집모드로 변경 -->
+            <a href="../Edit/NoticeEdit.jsp">
+                <button type="button" id="edit" class="btn btn-light">편집하기</button>
+            </a>
+            <!--게시물 업로드 페이지로 이동  -->
+            <a href="../Edit/NoticeEdit.jsp">
+                <button type="button" id="add" class="btn btn-dark">+</button>
+            </a>
         </div>
-
     </div>
 
     <!-- 채널 카테고리 -->
+    
     <div class="channel-ctg">
-        <a href="./Notice.jsp">
+        <a href="./MyNotice.jsp">
 
             <span id="select">공지사항</span>
         </a>
 
-        <a href="./ChannelMain.jsp">
+        <a href="./MychannelMain.jsp">
 
-            <span>피드</span>
+            <span >피드</span>
         </a>
 
-        <a href="./Video.jsp">
+        <a href="./MyVideo.jsp">
 
             <span>동영상</span>
         </a>
 
-        <a href="./ItemList.jsp">
+        <a href="./MyItemList.jsp">
 
             <span>판매작품</span>
         </a>
+
     </div>
 
     <div class="line"></div>
@@ -146,8 +188,8 @@
             <div class="col-lg-4">
 
                 <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세 피드로 이동 -->
-                    <a href="../ChannelDetail/NoticeDetail.jsp">
+                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
+                    <a href="../SellerDetail/MyNoticeDetail.jsp">
 
                         <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -162,9 +204,10 @@
 
             <div class="col-lg-4">
 
+
                 <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세 피드로 이동 -->
-                    <a href="../ChannelDetail/NoticeDetail.jsp">
+                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
+                    <a href="../SellerDetail/MyNoticeDetail.jsp">
 
                         <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -173,15 +216,15 @@
                         </div>
                     </a>
                 </div>
-
 
             </div>
 
             <div class="col-lg-4">
 
+  
                 <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세 피드로 이동 -->
-                    <a href="../ChannelDetail/NoticeDetail.jsp">
+                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
+                    <a href="../SellerDetail/MyNoticeDetail.jsp">
 
                         <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -190,34 +233,16 @@
                         </div>
                     </a>
                 </div>
-
-
-            </div>
-
-
-            <div class="col-lg-4">
-
-                <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세 피드로 이동 -->
-                    <a href="../ChannelDetail/NoticeDetail.jsp">
-
-                        <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">공지사항</p>
-
-                        </div>
-                    </a>
-                </div>
-
 
             </div>
 
 
             <div class="col-lg-4">
 
+  
                 <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세 피드로 이동 -->
-                    <a href="../ChannelDetail/NoticeDetail.jsp">
+                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
+                    <a href="../SellerDetail/MyNoticeDetail.jsp">
 
                         <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -226,16 +251,16 @@
                         </div>
                     </a>
                 </div>
-
 
             </div>
 
 
             <div class="col-lg-4">
 
+    
                 <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세 피드로 이동 -->
-                    <a href="../ChannelDetail/NoticeDetail.jsp">
+                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
+                    <a href="../SellerDetail/MyNoticeDetail.jsp">
 
                         <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -245,6 +270,23 @@
                     </a>
                 </div>
 
+            </div>
+
+
+            <div class="col-lg-4">
+
+
+                <div class="card">
+                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
+                    <a href="../SellerDetail/MyNoticeDetail.jsp">
+
+                        <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">공지사항</p>
+
+                        </div>
+                    </a>
+                </div>
 
             </div>
 

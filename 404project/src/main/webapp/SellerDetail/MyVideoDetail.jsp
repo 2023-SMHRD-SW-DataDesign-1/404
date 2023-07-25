@@ -10,7 +10,7 @@
 
 
     <!-- css 연결 -->
-    <link rel="stylesheet" href="./FeedDetailStyle.css">
+    <link rel="stylesheet" href="./MyVideoDetailStyle.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -22,15 +22,15 @@
 
 
 
-    <title>피드 상세</title>
+    <title>나의 채널 동영상 상세</title>
 
 </head>
 
 <body>
 
 
-      <!-- 상단부 -->
-      <div class="user">
+     <!-- 상단부 -->
+     <div class="user">
 
         <a href="../SUSU/JoinMain.jsp">회원가입</a>
         <a href="../SUSU/Login.jsp">로그인</a>
@@ -116,22 +116,21 @@
 
 
     </header>
-
     <!-- feed -->
     <div class="main_feed">
         <div class="left_feed">
             <div class="feed_box">
 
                 <div class="feed_name">
-                    
+
                     <a href="../Channel/ChannelMain.jsp">
                         <div class="profile_box">
                             <!-- 프로필 사진 -->
-                            
+
                             <img class="profile_img" src="/img/profile_img.png">
-                            
+
                         </div>
-                        
+
                         <div class="feed_name_txt">
                             <!-- 작가 닉네임 -->
                             <span> suzy022 </span>
@@ -139,39 +138,28 @@
                         </div>
                     </a>
 
-                    <div class="button">
-                        <button type="button" class="btn btn-dark">팔로우</button>
-                    </div>
-                </div>
-
-                <!-- 피드 이미지 -->
-                <img class="feed_img" src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889">
-                <p class="feed_txt">여름을 맞아 걸치기 좋은 가디건을 만들어봤어요^^</p>
-
-                <!-- 상품연결링크 -->
-                
-                <div class="item_link">
-                    <p class="title">상품태그</p>
-                    
-                    <a href="../Item/ItemDetail.jsp">
-                        <div class="item-1">
-                            <div>
-                                
-                                <img src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889" alt="">
-                            </div>
-                            
-                            <div>
-                                
-                                <p class="item_name">[banul wear] 슬림핏 가디건</p>
-                            </div>
-
-                            <div>
-                                
-                                <p class="item_price"><b>23,400원</b></p>
-                            </div>
+                    <!-- 수정/삭제 버튼 -->
+                    <div class="dropdown">
+                        <button class="vertical-ellipsis">⋮</button>
+                        <div class="dropdown-content">
+                            <!-- 수정 버튼 클릭 시 피드 업로드 페이지로 이동 -->
+                            <a href="../Upload/FeedUpload.jsp" id="editLink">수정</a>
+                            <!-- 삭제 버튼 클릭 시 db에서 피드 삭제되고 작가 채널 메인 페이지로 이동 -->
+                            <a href="../Seller/MychannelMain.jsp" id="deleteLink">삭제</a>
                         </div>
                     </div>
-                </a>
+
+                </div>
+
+                <!-- 피드 동영상 -->
+
+                <video muted autoplay loop>
+                    <source src="/video/kint_video.mp4" type="video/mp4">
+                    <strong>Your browser does not support the video tag.</strong>
+                </video>
+
+
+
 
 
 
@@ -196,7 +184,16 @@
                         </svg>
                     </div>
 
-    
+                    <!-- 공유 -->
+                    <div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-share"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                        </svg>
+
+                    </div>
 
 
 
@@ -204,27 +201,24 @@
                 <div class="feed_like">
                     <p class="like_count"> <b>좋아요</b> 10개</p>
                 </div>
-                <div class="feed_date">
-                    <p>2023년 7월 24일</p>
-                </div>
 
                 <div class="feed_reply">
                     <p>댓글</p>
 
                     <div>
                         <img src="/img/profile_img.png" alt="회원프로필사진">
-                        <p class="reply_txt"> <b> suzy022 </b>제품 어디서 살 수 있나요? </p>
+                        <p class="reply_txt"> <b> suzy022 </b>재료가 궁금해요 </p>
                     </div>
 
                     <div>
 
                         <img src="/img/profile_img.png" alt="회원프로필사진">
-                        <p class="reply_txt"> <b> chew012 </b> 가방 예쁘다</p>
+                        <p class="reply_txt"> <b> chew012 </b> 조금 자세히 설명해주세요ㅠㅠ</p>
                     </div>
 
                     <div>
                         <img src="/img/profile_img.png" alt="회원프로필사진">
-                        <p class="reply_txt"> <b> hoo486 </b> 모델착장정보 궁금해요~ </p>
+                        <p class="reply_txt"> <b> hoo486 </b> 완성작이 기대돼요! </p>
                     </div>
 
                 </div>
@@ -238,6 +232,50 @@
 
         </div>
     </div>
+
+     <!-- 수정/삭제 메뉴 js -->
+     <script>
+        // JavaScript를 사용하여 드롭다운 메뉴를 토글합니다.
+        document.querySelector(".vertical-ellipsis").addEventListener("click", function () {
+            document.querySelector(".dropdown-content").classList.toggle("show");
+        });
+
+        // 클릭 이외의 영역을 클릭하면 드롭다운 메뉴를 닫습니다.
+        window.addEventListener("click", function (event) {
+            if (!event.target.matches(".vertical-ellipsis")) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains("show")) {
+                        openDropdown.classList.remove("show");
+                    }
+                }
+            }
+        });
+
+        // 수정 버튼 클릭 시 피드 편집 페이지로 이동
+        // 전에 입력한 데이터가 넘어와야 함
+        document.getElementById("editLink").addEventListener("click", function (event) {
+            event.preventDefault(); // 기본 링크 동작 방지
+            window.location.href = event.target.href; // FeedUpload.jsp 페이지로 이동
+        });
+
+        // 삭제 버튼 클릭 시 게시물 삭제
+        document.getElementById("deleteLink").addEventListener("click", function (event) {
+            event.preventDefault(); // 기본 링크 동작 방지
+
+            // 게시물 삭제 로직을 추가해야 합니다.
+            // 이 예시에서는 간단히 알림을 표시하도록 하겠습니다.
+            if (confirm("게시물을 삭제하시겠습니까?")) {
+                // 삭제 동작 수행
+                alert("게시물이 삭제되었습니다.");
+            } else {
+                // 취소 동작 수행
+                alert("게시물 삭제가 취소되었습니다.");
+            }
+        });
+
+    </script>
 
 
 

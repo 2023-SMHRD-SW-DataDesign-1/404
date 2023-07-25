@@ -124,6 +124,7 @@ input.form-control {
     height: 27px;
 }
 
+
 /* 브랜드 배너 */
 div#banner{
     width: 80%;
@@ -161,6 +162,7 @@ div#banner{
 }
 
 
+/* 닉네임 */
 .user-info-container #nickname{
     font-weight: 700;
 }
@@ -174,10 +176,6 @@ div#banner{
     margin:5px;
 }
 
-.follow-box a{
-    text-decoration: none;
-    color: #222222;
-}
 
 .count{
     font-weight: 700;
@@ -189,8 +187,38 @@ button[type="button"]{
     margin-bottom: 20px;
 }
 
+/* 버튼 */
+.button{
+    height: 80px;
+    margin-top: 10px;
+}
+
+.button a{
+    text-decoration: none;
+}
+
+
+#edit{
+    font-size: 18px;
+}
+
+#add{
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
 /* 공지사항/피드/동영상/판매목록 */
+.channel-ctg a{
+    text-decoration: none;
+    color: #212529;
+}
+
+
 .channel-ctg{
     margin-top: 30px;
     text-align: center;
@@ -203,14 +231,6 @@ button[type="button"]{
     margin: 20px 20px 20px 20px;
    
 }
-
-
-/* 공지사항 피드 동영상 판매목록 글씨 */
-.channel-ctg a{
-    text-decoration: none;
-    color: #212529;
-}
-
 
 #select{
 
@@ -232,19 +252,34 @@ button[type="button"]{
 .post-box{
     width: 80%;
     margin: 10px auto; 
-
+    display: flex;
 }
 
-.post-box img{
-    width: 450px;
-    height: 490px;
+
+.card{
+    
+    width: 350px;
+    height: 400px;
+    background-color: whitesmoke;
     margin: 20px 10px 10px 10px;
     margin-left: 20px;
     border-radius: 5px;
+    border:  1px solid rgb(221, 215, 215);
+    
+
     /* object-fit: cover; */
     /* image-rendering: auto; */
 
 
+}
+
+.card a{
+    text-decoration: none;
+    color: #212529;
+}
+.card img{
+    width: 348px;
+    height: 370px;
 }
 
 

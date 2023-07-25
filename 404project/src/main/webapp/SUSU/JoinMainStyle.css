@@ -1,15 +1,15 @@
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-.notosanskr * { 
- font-family: 'Noto Sans KR', sans-serif;
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
 }
-  
-  body {
+
+body {
     font-family: 'Noto Sans KR', 'Malgun Gothic';
     margin: 0;
     padding: 0;
-  }
+}
 
 /* 상단부 */
 header {
@@ -30,26 +30,34 @@ header {
 }
 
 
-/* 회원가입 로그인 마이페이지 */
+/* 채팅, 나의 채널, 장바구니, 마이페이지 */
 .user-actions {
-    position: relative;
-    right: 0px;
-  
-  
-  }
-  
-  .user-actions a {
+    position: flex;
+    margin-right: 0%;
+
+
+}
+
+.user-actions a {
     font-size: 17px;
     color: rgb(46, 45, 45);
     text-decoration: none;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  
-  .user-actions a:first-child {
-    margin-right: 10px;
-  }
-  
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+.user-actions svg {
+    width: 30px;
+    height: 30px;
+}
+
+#mychannel {
+    width: 27px;
+    height: 27px;
+}
+
 
 
 /* 회원가입 창 */
@@ -67,8 +75,8 @@ header {
     margin-bottom: 10px;
 }
 
-.line{
-    border-top: 1px solid rgb(218, 216, 216) ;
+.line {
+    border-top: 1px solid rgb(218, 216, 216);
     width: 230px;
     margin-left: 90px;
 }
@@ -88,6 +96,7 @@ header {
 
 /* 일반 회원가입 버튼 */
 #submit {
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,18 +107,20 @@ header {
 
 button[type="submit"] {
     font-family: 'HealthsetGothicLight', 'NotoSansKR';
-    background-color:#fff;
+    background-color: #fff;
     color: rgba(123, 43, 12, 0.863);
     font-size: 16px;
     font-weight: 600px;
     padding: 10px;
     border-radius: 7px;
     border: 1px solid rgba(123, 43, 12, 0.863);
-    
+
 }
 
 
 #submit a {
+    font-family: 'Noto Sans KR', 'Malgun Gothic';
+    font-weight: 600;
     text-decoration: none;
 }
 

@@ -160,7 +160,7 @@ div#banner{
     color: #222222;
 }
 
-
+/* 닉네임 */
 .user-info-container #nickname{
     font-weight: 700;
 }
@@ -189,8 +189,38 @@ button[type="button"]{
     margin-bottom: 20px;
 }
 
+.button a{
+    text-decoration: none;
+}
+
+
+/* 버튼 */
+.button{
+    height: 80px;
+    margin-top: 10px;
+}
+
+#edit{
+    font-size: 18px;
+}
+
+#add{
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
 /* 공지사항/피드/동영상/판매목록 */
+.channel-ctg a{
+    text-decoration: none;
+    color: #212529;
+}
+
+
 .channel-ctg{
     margin-top: 30px;
     text-align: center;
@@ -203,14 +233,6 @@ button[type="button"]{
     margin: 20px 20px 20px 20px;
    
 }
-
-
-/* 공지사항 피드 동영상 판매목록 글씨 */
-.channel-ctg a{
-    text-decoration: none;
-    color: #212529;
-}
-
 
 #select{
 
@@ -228,23 +250,38 @@ button[type="button"]{
 }
 
 /* 게시물 영역 */
-
 .post-box{
     width: 80%;
     margin: 10px auto; 
-
+    display: flex;
 }
 
-.post-box img{
+.card{
+    
     width: 450px;
     height: 490px;
+    background-color: whitesmoke;
     margin: 20px 10px 10px 10px;
     margin-left: 20px;
     border-radius: 5px;
+    border:  1px solid rgb(221, 215, 215);
+    
+
     /* object-fit: cover; */
     /* image-rendering: auto; */
 
 
 }
+
+.card a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.card-body p{
+    font-size: 17px;
+    font-weight: bolder;
+}
+
 
 

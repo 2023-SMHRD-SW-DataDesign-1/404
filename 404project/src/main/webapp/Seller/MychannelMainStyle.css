@@ -189,6 +189,10 @@ button[type="button"]{
     margin-bottom: 20px;
 }
 
+.button a{
+    text-decoration: none;
+}
+
 
 /* 공지사항/피드/동영상/판매목록 */
 .channel-ctg{
@@ -227,6 +231,27 @@ button[type="button"]{
     border-bottom: 1px solid rgb(221, 215, 215);
 }
 
+
+/* 버튼 */
+.button{
+    height: 80px;
+    margin-top: 10px;
+}
+
+#edit{
+    font-size: 18px;
+}
+
+#add{
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 /* 게시물 영역 */
 
 .post-box{
@@ -236,10 +261,8 @@ button[type="button"]{
 }
 
 .post-box img{
-    width: 450px;
-    height: 490px;
-    margin: 20px 10px 10px 10px;
-    margin-left: 20px;
+    width: 100%;
+    height: 110%;
     border-radius: 5px;
     /* object-fit: cover; */
     /* image-rendering: auto; */
@@ -248,3 +271,6 @@ button[type="button"]{
 }
 
 
+.feed{
+    margin-bottom: 20px;
+}

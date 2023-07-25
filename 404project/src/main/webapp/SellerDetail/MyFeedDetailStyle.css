@@ -157,18 +157,20 @@ input.form-control {
     margin-bottom: 10px;
 }
 
-.feed_name a{
+.feed_name a {
     text-decoration: none;
-    color: #212529 ;
+    color: #212529;
 }
 
- .feed_name_txt{
+/* 작가 이름 */
+.feed_name_txt {
     position: absolute;
-    top:21%;
+    top: 21%;
     left: 37%;
     margin-left: 5px;
 
-}  
+}
+
 .feed_name_txt span {
     font-size: 18x;
     padding: 0px 10px;
@@ -189,11 +191,54 @@ input.form-control {
     object-fit: cover;
 }
 
-.button{
+.button {
     position: absolute;
     right: 40%;
 }
 
+/* 점 3개 버튼 */
+.dropdown {
+    position: absolute;
+    top: 23%;
+    left: 82%;
+    margin-left: 5px;
+
+
+}
+  
+  .vertical-ellipsis {
+    background-color: #f1f1f1;
+    border: none;
+    color: #000;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .show {
+    display: block;
+  }
+  
 
 /* 피드 사진 */
 .feed_img {
@@ -211,23 +256,23 @@ input.form-control {
 
 
 /* 좋아요, 댓글 아이콘 */
-.feed_icon{
+.feed_icon {
     display: flex;
     margin-bottom: 20px;
 }
 
-.feed_icon div{
+.feed_icon div {
     width: 30px;
     height: 30px;
     margin-right: 20px;
-   
+
 }
 
 
 
 /* 상품연결링크 */
 
-.item_link{
+.item_link {
     position: absolute;
     top: 25%;
     left: 62%;
@@ -236,28 +281,28 @@ input.form-control {
     margin-bottom: 20px;
 }
 
-.item_link a{
+.item_link a {
     text-decoration: none;
     color: #212529;
 }
 
 /* 상품링크 */
-.title{
+.title {
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 /* 상품이미지 */
-.item_link img{
-   
+.item_link img {
+
     width: 30%;
     height: 25%;
 }
 
 
 /* 상품명 */
-.item_name{
+.item_name {
     margin-top: 10px;
     margin-bottom: 5px;
     width: 30%;
@@ -268,15 +313,15 @@ input.form-control {
 }
 
 /* 상품가격 */
-.item_price{
+.item_price {
     margin-top: 0px;
     font-size: 14px;
 
 }
 
 /* 좋아요 수 */
-.like_count{
-    font-size: 16px;
+.like_count {
+    font-size: 15px;
 }
 
 /* 피드 날짜 */
@@ -285,114 +330,19 @@ input.form-control {
     color: gray;
 }
 
-.feed_reply div{
+
+.feed_reply div {
     display: flex;
 }
 
 /* 댓글 단 회원의 프로필 */
-.feed_reply img{
+.feed_reply img {
     width: 30px;
     height: 30px;
     border-radius: 70%;
     margin-right: 5px;
 }
 
-.feed_reply b{
+.feed_reply b {
     margin-right: 10px;
 }
-
-
-
-
-
-
-
-/* 좋아요, 댓글 아이콘 */
-.feed_icon{
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.feed_icon div{
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-   
-}
-
-
-
-/* 상품연결링크 */
-
-.item_link{
-    position: absolute;
-    top: 25%;
-    left: 62%;
-    margin-top: 20px;
-    border-top: 1px solid rgb(233, 228, 228);
-    margin-bottom: 20px;
-}
-
-.item_link a{
-    text-decoration: none;
-    color: #212529;
-}
-
-/* 상품링크 */
-.title{
-    font-weight: 500;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-/* 상품이미지 */
-.item_link img{
-   
-    width: 30%;
-    height: 25%;
-}
-
-
-/* 상품명 */
-.item_name{
-    margin-top: 10px;
-    margin-bottom: 5px;
-    width: 30%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 14px;
-}
-
-/* 상품가격 */
-.item_price{
-    margin-top: 0px;
-    font-size: 14px;
-
-}
-
-/* 좋아요 수 */
-.like_count{
-    font-size: 15px;
-}
-
-
-.feed_reply div{
-    display: flex;
-}
-
-/* 댓글 단 회원의 프로필 */
-.feed_reply img{
-    width: 30px;
-    height: 30px;
-    border-radius: 70%;
-    margin-right: 5px;
-}
-
-.feed_reply b{
-    margin-right: 10px;
-}
-
-
-
-

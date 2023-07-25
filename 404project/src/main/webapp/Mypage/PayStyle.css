@@ -21,7 +21,7 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgb(233, 228, 228);
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 
@@ -31,10 +31,10 @@ header {
 }
 
 
-/* 회원가입 로그인 마이페이지 */
+/* 채팅, 나의 채널, 장바구니, 마이페이지 */
 .user-actions {
-  position: relative;
-  right: 0px;
+  position: flex;
+  margin-right: 0%;
 
 
 }
@@ -43,12 +43,20 @@ header {
   font-size: 17px;
   color: rgb(46, 45, 45);
   text-decoration: none;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.user-actions a:first-child {
-  margin-right: 10px;
+
+
+.user-actions svg {
+  width: 30px;
+  height: 30px;
+}
+
+#mychannel {
+  width: 27px;
+  height: 27px;
 }
 
 
@@ -85,7 +93,7 @@ header {
 }
 
 /* 결제내역 */
-/* 장바구니 */
+
 body {
   margin: 0;
 }
@@ -171,8 +179,8 @@ td {
 }
 
 
-
 .pay__list__option {
+  border-left: 2px solid whitesmoke;
   vertical-align: top;
   padding: 20px;
 }
@@ -222,5 +230,36 @@ td {
 
 .price {
   font-weight: bold;
+  margin-left: 35%;
 }
 
+.pay__mainbtns {
+  width: 420px;
+  height: 200px;
+  padding-top: 60px;
+  margin: auto;
+}
+
+.pay__mainbtns a{
+  text-decoration: none;
+}
+
+.pay__bigorderbtn {
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  margin: auto;  
+  border-radius: 5px;
+}
+
+.pay__bigorderbtn.left {
+  background-color: white;
+  border: 1px lightgray solid;
+  margin-right: 10px;
+}
+
+.pay__bigorderbtn.right {
+  background-color: rgba(70, 24, 6, 0.863);
+  color: white;
+  border: none;
+}

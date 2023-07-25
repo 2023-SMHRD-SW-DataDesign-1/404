@@ -124,127 +124,104 @@ input.form-control {
     height: 27px;
 }
 
-/* 브랜드 배너 */
-div#banner{
-    width: 80%;
-    height: 100px;
-    background-color: whitesmoke;
-    border: 1px solid #e2dbdb;
-    border-radius: 5px;
-    margin: 10px auto;
-    background-attachment:fixed;
+
+
+/* 피드 영역 */
+.main_feed {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
 }
 
-/* 프로필 영역 */
-.user-info-container {
-    text-align: center;
-    width: 80%;
-    height: 42%;
-    margin-left: 10%;
-    border: 1px solid #e2dbdb;
-    
+.left_feed {
+
+    margin-right: 100px;
+    width: 500px;
+    height: 2000px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* 프로필 사진 */
-.user-info-container img {
-    margin-top: 10px;
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
-
+.feed_box {
+    background-color: white;
+    width: 480px;
+    margin: 10px;
+    min-height: auto;
 }
 
 
-/* 닉네임, 소개글 글씨 */
-.user-info-container p{
-    color: #222222;
+/* 공지사항 제목 */
+
+.notice_title{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 20px;
+    border: 1px solid rgb(233, 228, 228);
 }
 
-
-.user-info-container #nickname{
-    font-weight: 700;
+.notice_title>div{
+    flex-grow: 1;
 }
 
-/* 팔로우 정보*/
-.follow-box{
-    border-bottom: 10px;
+/* 점 3개 버튼 */
+.dropdown {
+    display: inline-block;
+    margin-left: 50%;
 }
-
-.follow-box span{
-    margin:5px;
-}
-
-.follow-box a{
+  
+  .vertical-ellipsis {
+    display: inline-block;
+    background-color: #f1f1f1;
+    border: none;
+    color: #000;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #000;
+    padding: 12px 16px;
     text-decoration: none;
-    color: #222222;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+/* 공지사항 내용  */
+.notice-content{
+    border: 1px solid rgb(233, 228, 228);
+
 }
 
-.count{
-    font-weight: 700;
+/* 공지사항 사진 */
+.notice_img {
+    width: 100%;
+    height: 500px;
 }
 
-/* 팔로우, 메시지 버튼 */
-button[type="button"]{
-    margin:10px;
+
+/* 공지사항 텍스트 */
+.notice_txt {
+    margin-top: 20px;
     margin-bottom: 20px;
-}
-
-
-/* 공지사항/피드/동영상/판매목록 */
-.channel-ctg{
-    margin-top: 30px;
-    text-align: center;
-   
+    padding: 20px;
 
 }
-
-.channel-ctg span{
-    font-size: 20px;
-    margin: 20px 20px 20px 20px;
-   
-}
-
-
-/* 공지사항 피드 동영상 판매목록 글씨 */
-.channel-ctg a{
-    text-decoration: none;
-    color: #212529;
-}
-
-
-#select{
-
-    background-color: whitesmoke;
-    padding:7px;
-    border-radius: 5px;
-}
-
-.line{
-    width: 80%;
-    height: 2px;
-    padding-top: 20px;
-    margin-left: 10%;
-    border-bottom: 1px solid rgb(221, 215, 215);
-}
-
-/* 게시물 영역 */
-
-.post-box{
-    width: 80%;
-    margin: 10px auto; 
-
-}
-
-.post-box img{
-    width: 450px;
-    height: 490px;
-    margin: 20px 10px 10px 10px;
-    margin-left: 20px;
-    border-radius: 5px;
-    /* object-fit: cover; */
-    /* image-rendering: auto; */
-
-
-}
-
 

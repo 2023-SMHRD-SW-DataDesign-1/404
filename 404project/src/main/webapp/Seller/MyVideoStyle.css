@@ -125,14 +125,14 @@ input.form-control {
 }
 
 /* 브랜드 배너 */
-div#banner{
+div#banner {
     width: 80%;
     height: 100px;
     background-color: whitesmoke;
     border: 1px solid #e2dbdb;
     border-radius: 5px;
     margin: 10px auto;
-    background-attachment:fixed;
+    background-attachment: fixed;
 }
 
 /* 프로필 영역 */
@@ -142,7 +142,7 @@ div#banner{
     height: 42%;
     margin-left: 10%;
     border: 1px solid #e2dbdb;
-    
+
 }
 
 /* 프로필 사진 */
@@ -156,70 +156,91 @@ div#banner{
 
 
 /* 닉네임, 소개글 글씨 */
-.user-info-container p{
+.user-info-container p {
     color: #222222;
 }
 
-
+/* 닉네임 */
 .user-info-container #nickname{
     font-weight: 700;
 }
 
+
+
 /* 팔로우 정보*/
-.follow-box{
+.follow-box {
     border-bottom: 10px;
 }
 
-.follow-box span{
-    margin:5px;
+.follow-box span {
+    margin: 5px;
 }
 
-.follow-box a{
-    text-decoration: none;
-    color: #222222;
-}
 
-.count{
+.count {
     font-weight: 700;
 }
 
 /* 팔로우, 메시지 버튼 */
-button[type="button"]{
-    margin:10px;
+button[type="button"] {
+    margin: 10px;
     margin-bottom: 20px;
+}
+
+/* 버튼 */
+.button{
+    height: 80px;
+    margin-top: 10px;
+}
+
+.button a{
+    text-decoration: none;
+}
+
+
+#edit{
+    font-size: 18px;
+}
+
+#add{
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 
 /* 공지사항/피드/동영상/판매목록 */
-.channel-ctg{
-    margin-top: 30px;
-    text-align: center;
-   
-
-}
-
-.channel-ctg span{
-    font-size: 20px;
-    margin: 20px 20px 20px 20px;
-   
-}
-
-
-/* 공지사항 피드 동영상 판매목록 글씨 */
-.channel-ctg a{
+.channel-ctg a {
     text-decoration: none;
     color: #212529;
 }
 
 
-#select{
+.channel-ctg {
+    margin-top: 30px;
+    text-align: center;
+
+
+}
+
+.channel-ctg span {
+    font-size: 20px;
+    margin: 20px 20px 20px 20px;
+
+}
+
+#select {
 
     background-color: whitesmoke;
-    padding:7px;
+    padding: 7px;
     border-radius: 5px;
 }
 
-.line{
+.line {
     width: 80%;
     height: 2px;
     padding-top: 20px;
@@ -228,23 +249,17 @@ button[type="button"]{
 }
 
 /* 게시물 영역 */
-
-.post-box{
+.post-box {
     width: 80%;
-    margin: 10px auto; 
-
-}
-
-.post-box img{
-    width: 450px;
-    height: 490px;
-    margin: 20px 10px 10px 10px;
-    margin-left: 20px;
-    border-radius: 5px;
-    /* object-fit: cover; */
-    /* image-rendering: auto; */
-
-
+    margin: 10px auto;
+    display: flex;
 }
 
 
+
+/* 동영상 */
+video {
+    max-height: 600px;
+    display: block;
+    margin: 20px auto;
+}

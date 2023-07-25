@@ -12,10 +12,25 @@
     padding: 0;
 }
 
+/* 회원가입, 로그인 */
+.user{
+    width: fit-content;
+    margin-top: 10px;
+    margin-left: 78%;
+    background-color: #f8f8f8;
+}
+
+.user a{
+    text-decoration: none;
+    color: #212121;
+    margin: 15px;
+}
+
 
 /* 상단부 */
 header {
     font-family: 'HealthsetGothicLight', 'NotoSansKR';
+    height: 100px;
     background-color: white;
     color: black;
     padding: 10px;
@@ -74,10 +89,10 @@ input.form-control {
 
 
 
-/* 회원가입 로그인 마이페이지 */
+/* 채팅, 나의 채널, 장바구니, 마이페이지 */
 .user-actions {
     position: flex;
-    margin-right: 10%;
+    margin-right: 12%;
 
 
 }
@@ -86,12 +101,20 @@ input.form-control {
     font-size: 17px;
     color: rgb(46, 45, 45);
     text-decoration: none;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.user-actions a:first-child {
-    margin-right: 10px;
+
+
+.user-actions svg{
+    width: 30px;
+    height: 30px;
+}
+
+#mychannel{
+    width: 27px;
+    height: 27px;
 }
 
 
@@ -178,4 +201,4 @@ div#item-link {
     color: #212121;
     vertical-align: middle;
 
-}
+}}
