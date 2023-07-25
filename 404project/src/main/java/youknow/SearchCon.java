@@ -1,4 +1,4 @@
-package com.smhrd.controller;
+package youknow;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.model.productDAO;
+import youknow.ProductDAO;
 
 public class SearchCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -21,7 +21,7 @@ public class SearchCon extends HttpServlet {
 		String search = request.getParameter("search");
 		System.out.println("search : " + search);
 
-		productDAO dao = new productDAO();
+		ProductDAO dao = new ProductDAO();
 		int row = Integer.parseInt(dao.searchProduct(search));
 		if (row > 0) {
 			System.out.println("상품 검색 성공");
