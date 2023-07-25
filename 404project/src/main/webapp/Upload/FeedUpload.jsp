@@ -121,13 +121,47 @@
     </div>
 
 
-    <!-- 파일 선택 js -->
+   <!-- 파일 선택 js -->
     <script>
         function onClickUpload() {
             let myInput = document.getElementById("feed-text");
             myInput.click();
         }
     </script>
+
+
+
+    <script>
+        // Function to handle file input change
+        document.getElementById('file').addEventListener('change', function (event) {
+            const fileInput = event.target;
+            const fileContainer = document.querySelector('.file-container');
+    
+            // Check if a file was selected
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+                const fileReader = new FileReader();
+    
+                // Read the selected file as data URL
+                fileReader.readAsDataURL(file);
+    
+                // When the file is loaded, update the file-container content
+                fileReader.onload = function (e) {
+                    fileContainer.innerHTML = ''; // Clear existing content
+    
+                    // Create an image element and set its attributes
+                    const image = document.createElement('img');
+                    image.setAttribute('src', e.target.result);
+                    image.setAttribute('alt', 'Uploaded Image');
+                    image.style.maxWidth = '100%'; // Set maximum width to fit the container
+    
+                    // Append the image to the file-container
+                    fileContainer.appendChild(image);
+                };
+            }
+        });
+    </script>
+    
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
