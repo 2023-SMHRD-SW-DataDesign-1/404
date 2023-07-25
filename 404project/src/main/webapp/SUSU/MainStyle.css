@@ -13,14 +13,14 @@
 }
 
 /* 회원가입, 로그인 */
-.user{
+.user {
     width: fit-content;
     margin-top: 10px;
     margin-left: 78%;
     background-color: #f8f8f8;
 }
 
-.user a{
+.user a {
     text-decoration: none;
     color: #212121;
     margin: 15px;
@@ -84,7 +84,7 @@ input.form-control {
     width: 1.5rem;
     height: 1.5rem;
     color: rgba(123, 43, 12, 0.863);
-    
+
 }
 
 
@@ -107,12 +107,12 @@ input.form-control {
 
 
 
-.user-actions svg{
+.user-actions svg {
     width: 30px;
     height: 30px;
 }
 
-#mychannel{
+#mychannel {
     width: 27px;
     height: 27px;
 }
@@ -120,85 +120,153 @@ input.form-control {
 
 /* 피드 컨테이너 */
 .feed-container {
-    width: 85%;
+    width: 100%;
     text-align: center;
     margin: 10px auto;
-    margin-left: 12%;
+    margin-left: 15%;
+    margin-top: 30px;
+}
+
+/* 피드 */
+.main-feed {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: 10px;
+    margin-left: 20%;
 }
 
 
-/* 피드 목록 */
+/* 프로필 */
+.profile{
+    width: 80%;
+    text-align: left;
+}
 
-div.card {
-    width: 21rem;
-    border: 0;
+.profile a{
+    text-decoration: none;
+}
 
+/* 프로필 사진 */
+
+#profile-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 0;
 }
 
 
 
 /* 피드 사진 */
-.card img {
+.feed-img img {
     margin-top: 10px;
     width: 100%;
-    height: 100%;
-    border-radius: 15px;
-}
-
-/* 상품연결 링크 */
-div#item-link {
-    border: 1px solid red;
-    width: 150px;
-    height: 150px;
-    left: 100%;
-    top: 10%;
-    margin: 10px 0 0 0;
+    height: 50%;
 }
 
 
-#link {
-    width: 200px;
-    height: 200px;
-    border-radius: 0;
-    margin-bottom: 20px;
-}
+/* 작가 정보, 상품정보 */
 
-/* 프로필 */
-
-
-.card-body {
+.feed-info {
+    width: 80%;
+    margin-top: 20px;
     text-align: left;
-
+    
 }
 
-.card-body a {
+.feed-info a {
     text-decoration: none;
     color: black;
-
+    
 }
 
 
-/* 프로필 사진 */
+.feed-text a {
+   text-decoration: none;
+   text-align: left;
+   color: #212121;
+  
 
-.card-body img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
 }
 
+.feed-text{
+    margin-top: 20px;
 
-
-.card-body span {
-    margin-left: 5px;
-}
-
-.card-body p {
-    padding: 10px;
 }
 
 /* 작가 닉네임 */
-.card-title {
+.user-name {
     color: #212121;
     vertical-align: middle;
 
-}}
+}
+
+/* 상품연결링크 */
+
+.item_link{
+    width: 500px;
+    justify-content: space-between;
+    border-top: 1px solid rgb(233, 228, 228);
+}
+
+.item_link a{
+    text-decoration: none;
+    color: #212529;
+}
+
+/* 개별상품 */
+.items{
+    display: flex;
+}
+
+.items div{
+    width: fit-content;
+}
+
+.item{
+    width: 100%;
+    margin-right: 10px;
+}
+
+
+/* 상품명 */
+#title{
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+
+
+/* 상품이미지 */
+.items img{
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+
+
+/* 상품명 */
+.item_name p{
+    width: 130px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+/* 상품가격 */
+.item_price p{
+    font-size: 12px;
+    margin-top: 0;
+    margin: 0;
+    padding: 0;
+}
