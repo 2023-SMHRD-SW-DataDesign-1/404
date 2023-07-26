@@ -143,7 +143,37 @@
                         <button type="button" class="btn btn-dark">팔로우</button>
                     </div>
                 </div>
-
+                
+				<script type="text/javascript">
+				$(document).ready(function() {
+				    $('.btn.btn-dark').click(function() {
+				        // 팔로우 정보 생성
+				        var followData = {
+				            follower: 'follower_nickname',
+				            following: 'following_nickname'
+				        };
+				        // 서버에 팔로우 정보 전송
+				        $.ajax({
+				            url: 'follow',
+				            type: 'POST',
+				            data: followData,
+				            success: function(response) {
+				                // 서버에서 응답을 받았을 때의 처리
+				                if (response.success) {
+				                    alert('팔로우 성공');
+				                } else {
+				                    alert('팔로우 실패');
+				                }
+				            },
+				            error: function(error) {
+				                // 서버와 통신 중에 오류가 발생했을 때의 처리
+				                alert('서버와 통신 중에 오류가 발생했습니다.');
+				            }
+				        });
+				    });
+				});
+				
+				</script>
                 <!-- 피드 이미지 -->
                 <img class="feed_img" src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889">
                 <p class="feed_txt">여름을 맞아 걸치기 좋은 가디건을 만들어봤어요^^</p>
