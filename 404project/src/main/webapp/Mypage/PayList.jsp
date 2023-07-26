@@ -146,16 +146,7 @@
                 </tfoot>
             </form>
         </table>
-        <div class="pay__mainbtns">
-            <a href="../SUSU/Main.jsp">
-
-                <button class="pay__bigorderbtn left">계속 구경하기</button>
-            </a>
-            <a href="../Item/Order.jsp">
-
-                <button class="pay__bigorderbtn right">주문하기</button>
-            </a>
-        </div>
+      
     </section>
 
 
