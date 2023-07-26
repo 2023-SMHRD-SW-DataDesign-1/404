@@ -201,14 +201,14 @@
 
 				<a href="../Channel/ChannelMain.jsp"> <img id="profile-img"
 					src="../img/profile_img.png" alt="프로필 사진"> <span
-					class="user-name">${lfeed_list.nickname}</span>
+					class="user-name">${sfeed_list.nickname}</span>
 				</a>
 			</div>
 
 			<div class="feed-img">
 				<!--사진을 클릭하면 피드 상세화면으로 이동 -->
 				<a href="../ChannelDetail/FeedDetail.jsp"> <img
-					src="../img/${lfeed_list.feed_image1}.jpg" class="card-img-top" alt="피드 사진">
+					src="../img/${sfeed_list.feed_image1}.jpg" class="card-img-top" alt="피드 사진">
 				</a>
 			</div>
 
@@ -216,7 +216,7 @@
 
 				<a href="../ChannelDetail/FeedDetail.jsp">
 
-					<p>${lfeed_list.text}</p>
+					<p>${sfeed_list.text}</p>
 				</a>
 			</div>
 
