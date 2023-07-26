@@ -13,7 +13,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+	<!-- jquery 연결 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -121,7 +124,7 @@
 
             <div class="item-option">
 
-                <select name="optionlist[]" onchange="change_option(this, 'basic');" label="색상선택" opt_type="SELECT"
+                <select name="optionlist[]" label="색상선택" opt_type="SELECT"
                     opt_id="1" opt_mix="Y" require="Y" opt_mandatory="Y" class="basic_option">
 
                     <option value="">옵션 선택</option>
@@ -143,8 +146,9 @@
 
                     <option value="5" title="블랙(size. M)" matrix="6" price="0" sto_id="6" dis_sto_price=""
                         dis_opt_price="" org_opt_price="0" sto_state="SOLDOUT">블랙(size. M) - 품절</option>
-
                 </select>
+                <!-- 옵션출력을 위한 p태그 추가 -->
+                <p class="selected-option"></p>
             </div>
 
              <!-- 장바구니, 주문하기 버튼 -->
@@ -174,7 +178,15 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-        </script>
+    
+    // 옵션 변경할때마다 옵션출력
+    const selectElement = document.querySelector('.basic_option');
+	const selectedOptionElement = document.querySelector('.selected-option');
+	selectElement.addEventListener("change", (event) => {
+ 	 selectedOptionElement.textContent = `Selected option: ${event.target.value}`;
+});
+
+   </script>
 
 
 </body>

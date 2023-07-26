@@ -24,6 +24,9 @@
 
     <title>나의 채널 피드 상세</title>
 
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+</script>
 </head>
 
 <body>
@@ -290,6 +293,26 @@
                 // 취소 동작 수행
                 alert("게시물 삭제가 취소되었습니다.");
             }
+        });
+        
+        // 판매 중이면 점 3개 메뉴에서 '판매' 기능 안 보이기, 판매중이 아니면 '판매'기능 보이기
+        $(document).ready(function() {
+            const itemLink = document.querySelector('#ItemLink');
+            $.ajax({
+                url: 'item-status',
+                type: 'GET',
+                data: { itemId: 'item_id' },
+                success: function(response) {
+                    if (response.isSelling) {
+                        itemLink.style.display = 'none';
+                    } else {
+                        itemLink.style.display = 'block';
+                    }
+                },
+                error: function(error) {
+                    alert('서버와 통신 중에 오류가 발생했습니다.');
+                }
+            });
         });
 
     </script>
