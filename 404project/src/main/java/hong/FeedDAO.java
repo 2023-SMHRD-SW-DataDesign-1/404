@@ -94,7 +94,7 @@ public class FeedDAO {
 		SqlSession session = sqlSessionFactory.openSession(true);
 
 		// 2. sql문장 실행하기
-		ArrayList lfeed_list = (ArrayList) session.selectList("showAllLikesFeeds");
+		ArrayList lfeed_list = (ArrayList) session.selectList("com.smhrd.mapper.FeedMapper.showAllLikesFeeds");
 
 		// 3. 연결 종료하기
 		session.close();
