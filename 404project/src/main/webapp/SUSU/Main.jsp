@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.FeedDAO"%>
-<%@page import="com.smhrd.model.FeedDTO"%>
+<%@page import="hong.FeedDAO"%>
+<%@page import="hong.FeedDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -124,12 +124,14 @@
 	<div class="feed-container">
 
 		<!--1번 피드  -->
-<c:set var= "lfeed_list" value="${FeedDAO.showAllLikesFeeds()}" ></c:set>
-<c:set var= "productlink_list" value="${ProductDAO.showProductLink()}" ></c:set>
-				<c:forEach  >
+<c:set var= "lfeed_list" value="${FeedDAO.showAllLikesFeeds()}"></c:set>
+<c:set var= "productlink_list" value="${ProductDAO.showProductLink()}"></c:set>
+<c:set var= "s_list" value="${FeedDAO.showAllSubcriptionFeeds()}"></c:set>
 
-				<c:forEach  bigin=1 end=5>
 		<div class="main-feed">
+			<!-- 피드반복시작 -->		
+				<c:forEach begin="1", end="100" >
+<!--좋아요순 피드 -->
 				
 				
 
@@ -155,15 +157,12 @@
 
 					<p>${lfeed_list.text}</p>
 				</a>
-
 			</div>
-
 
 			<div class="feed-info">
 
-
-				<!-- 상품상세페이지 연결링크 -->
-			<c:foreach var="productlink" item=${productlink_list}>
+<!-- 상품상세페이지 연결링크 -->
+			<c:forEach var="productlink" items=${productlink_list}>
 				<div class="item_link">
 					<div>
 						<p id="title">상품태그</p>
@@ -194,7 +193,70 @@
 							</a>
 
 						</div>
-			</c:foreach>
+			</c:forEach>
+	<!-- 상품링크 끝 -->
+	<!-- 좋아요순 정렬끝 -->
+	<!-- 구독자순 정렬 시작 -->
+			<div class="profile">
+
+				<a href="../Channel/ChannelMain.jsp"> <img id="profile-img"
+					src="../img/profile_img.png" alt="프로필 사진"> <span
+					class="user-name">${lfeed_list.nickname}</span>
+				</a>
+			</div>
+
+			<div class="feed-img">
+				<!--사진을 클릭하면 피드 상세화면으로 이동 -->
+				<a href="../ChannelDetail/FeedDetail.jsp"> <img
+					src="../img/${lfeed_list.feed_image1}.jpg" class="card-img-top" alt="피드 사진">
+				</a>
+			</div>
+
+			<div class="feed-text">
+
+				<a href="../ChannelDetail/FeedDetail.jsp">
+
+					<p>${lfeed_list.text}</p>
+				</a>
+			</div>
+
+			<div class="feed-info">
+
+<!-- 상품상세페이지 연결링크 -->
+			<c:forEach var="productlink" items=${productlink_list}>
+				<div class="item_link">
+					<div>
+						<p id="title">상품태그</p>
+					</div>
+
+					<div class="items">
+						<div class="item">
+
+							<a href="../Item/ItemDetail.jsp">
+								<div class="item-img">
+
+									<img
+										src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889"
+										alt="">
+								</div>
+
+								<div class="item_name">
+					
+									<p>${productlink_list.product_name }</p>
+								</div>
+
+								<div class="item_price">
+
+									<p>
+										<b>${productlink_list.product_price}</b>
+									</p>
+								</div>
+							</a>
+
+						</div>
+			</c:forEach>
+
+
 
 
 
@@ -218,7 +280,7 @@
 				
 				
 				
-				</c:forEach>
+				
 
 
 
