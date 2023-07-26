@@ -20,6 +20,7 @@
     <mapper resource="com/smhrd/mapper/FeedMapper1.xml"/>
     <mapper resource="com/smhrd/mapper/FollowMapper1.xml"/>
     <mapper resource="com/smhrd/mapper/MemberMapper1.xml"/>
+    <mapper resource="com/smhrd/mapper/NoticeMapper.xml"/>
 
     
   </mappers>

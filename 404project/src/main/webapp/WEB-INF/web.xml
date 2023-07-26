@@ -94,6 +94,12 @@
   	<description></description>
   	<servlet-class>youknow.DeleteControl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>NoticeUploadCon</servlet-name>
+  	<display-name>NoticeUploadCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.NoticeUploadCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>test</servlet-name>
   	<url-pattern>/test</url-pattern>
@@ -153,5 +159,9 @@
   <servlet-mapping>
   	<servlet-name>DeleteControl</servlet-name>
   	<url-pattern>/DeleteControl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>NoticeUploadCon</servlet-name>
+  	<url-pattern>/NoticeUploadCon</url-pattern>
   </servlet-mapping>
 </web-app>

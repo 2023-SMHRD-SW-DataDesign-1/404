@@ -75,28 +75,23 @@
     <div class="notice-board">
 
         <!-- 공지사항 입력값 전송 -->
-        <form action="">
-
+        <form action="../NoticeUploadCon">
+			
             <!-- 공지사항 제목 -->
             <div class="notice-title">
-                <input type="text" placeholder="제목을 입력하세요">
+                <input type="text" name="title" placeholder="제목을 입력하세요">
             </div>
 
             <!-- 공지사항 텍스트 -->
             <div class="notice-content">
-                <textarea name="notice-txt" cols="93%" rows="30%"  spellcheck="false"></textarea>
+                <textarea name="text" cols="93%" rows="30%"  spellcheck="false"></textarea>
             </div>
-
-            <!-- 공지사항 파일 선택 -->
-            <!-- 선택한 파일이 공지사항 상세페이지에서 보여야 함 -->
-            <div class="notice-file">
-                <input class="upload-name" value="첨부파일" placeholder="첨부파일">
-                <label for="file">파일찾기</label>
-                <input type="file" id="file">
-            </div>
-
+<!--  로그인이 안되니까 급하게 일시적으로 넣었음 또 테스트 할때 쓰길		
+	<input type="hidden" name= "nickname" value="abc" >
+-->
             <div class="submit">
-                <button type="submit"><a href="../Seller/MyNotice.jsp">등록하기</a></button>
+                <input type="submit" value="등록하기">
+
             </div>
         </form>
     </div>
