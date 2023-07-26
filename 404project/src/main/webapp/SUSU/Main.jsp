@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.FeedDAO"%>
+<%@page import="com.smhrd.model.FeedDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -72,7 +75,8 @@
 		<!-- 메뉴 -->
 		<div class="user-actions">
 			<!-- 채팅 -->
-			<a href="../SUSU/Chat.jsp"> <svg
+			<a href="../SUSU/Chat.jsp"> 
+			<svg
 					xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 					fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
                     <path
@@ -114,37 +118,42 @@
 	</header>
 
 
-
+<!--@@@@@ 피드 출력 건들어보겠어! -->
 
 	<!-- 피드 목록 -->
 	<div class="feed-container">
 
 		<!--1번 피드  -->
+<c:set var= "lfeed_list" value="${FeedDAO.showAllLikesFeeds()}" ></c:set>
+<c:set var= "productlink_list" value="${ProductDAO.showProductLink()}" ></c:set>
+				<c:forEach  >
 
+				<c:forEach  bigin=1 end=5>
 		<div class="main-feed">
+				
+				
 
 			<!-- 프로필 정보를 클릭하면 채널메인 화면으로 이동 -->
 			<div class="profile">
 
 				<a href="../Channel/ChannelMain.jsp"> <img id="profile-img"
 					src="../img/profile_img.png" alt="프로필 사진"> <span
-					class="user-name">작가 닉네임</span>
+					class="user-name">${lfeed_list.nickname}</span>
 				</a>
 			</div>
 
 			<div class="feed-img">
 				<!--사진을 클릭하면 피드 상세화면으로 이동 -->
 				<a href="../ChannelDetail/FeedDetail.jsp"> <img
-					src="../img/item_img.jpg" class="card-img-top" alt="피드 사진">
+					src="../img/${lfeed_list.feed_image1}.jpg" class="card-img-top" alt="피드 사진">
 				</a>
 			</div>
 
 			<div class="feed-text">
 
-
 				<a href="../ChannelDetail/FeedDetail.jsp">
 
-					<p>텍스트</p>
+					<p>${lfeed_list.text}</p>
 				</a>
 
 			</div>
@@ -154,7 +163,7 @@
 
 
 				<!-- 상품상세페이지 연결링크 -->
-
+			<c:foreach var="productlink" item=${productlink_list}>
 				<div class="item_link">
 					<div>
 						<p id="title">상품태그</p>
@@ -172,44 +181,22 @@
 								</div>
 
 								<div class="item_name">
-
-									<p>[banul wear] 슬림핏 가디건</p>
+					
+									<p>${productlink_list.product_name }</p>
 								</div>
 
 								<div class="item_price">
 
 									<p>
-										<b>23,400원</b>
+										<b>${productlink_list.product_price}</b>
 									</p>
 								</div>
 							</a>
 
 						</div>
+			</c:foreach>
 
-						<div class="item">
 
-							<a href="../Item/ItemDetail.jsp">
-								<div class="item-img">
-
-									<img
-										src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889"
-										alt="">
-								</div>
-
-								<div class="item_name">
-
-									<p>[banul wear] 슬림핏 가디건</p>
-								</div>
-
-								<div class="item_price">
-
-									<p>
-										<b>23,400원</b>
-									</p>
-								</div>
-							</a>
-
-						</div>
 
 
 					</div>
@@ -227,6 +214,17 @@
 
 
 		</div>
+				</c:forEach>
+				
+				
+				
+				</c:forEach>
+
+
+
+
+
+
 
 	</div>
 
