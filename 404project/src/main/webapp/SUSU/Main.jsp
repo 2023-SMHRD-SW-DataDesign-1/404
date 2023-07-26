@@ -1,9 +1,14 @@
 <%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.FeedDAO"%>
-<%@page import="com.smhrd.model.FeedDTO"%>
+<%@page import="hong.FeedDAO"%>
+<%@page import="hong.FeedDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<!-- EL 표현식 실행 -->
+<%@ page isELIgnored="false"%>
 
+<!-- JSTL 사용하기 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,11 +129,16 @@
 	<div class="feed-container">
 
 		<!--1번 피드  -->
-<c:set var= "lfeed_list" value="${FeedDAO.showAllLikesFeeds()}" ></c:set>
+<c:set var= 'lfeed_list' value='${FeedDAO.showAllLikesFeeds()}' ></c:set>
+<script type="text/javascript">
+	var feed_list = ${lfeed_list};
+	console.log("-----");
+	console.log(feed_list);
+</script>
 <c:set var= "productlink_list" value="${ProductDAO.showProductLink()}" ></c:set>
-				<c:forEach  >
+		
 
-				<c:forEach  bigin=1 end=5>
+				<c:forEach begin="1" end="5">
 		<div class="main-feed">
 				
 				
@@ -163,7 +173,7 @@
 
 
 				<!-- 상품상세페이지 연결링크 -->
-			<c:foreach var="productlink" item=${productlink_list}>
+			<c:forEach var="productlink" items="${productlink_list}">
 				<div class="item_link">
 					<div>
 						<p id="title">상품태그</p>
@@ -194,7 +204,7 @@
 							</a>
 
 						</div>
-			</c:foreach>
+			</c:forEach>
 
 
 
@@ -206,6 +216,7 @@
 
 
 				</div>
+				</c:forEach>
 			</div>
 
 
@@ -214,11 +225,9 @@
 
 
 		</div>
-				</c:forEach>
 				
 				
 				
-				</c:forEach>
 
 
 
@@ -242,8 +251,10 @@
 	</script>
 
 
-
-	<script src="ItemLink.js"></script>
+	<!-- @@@@@보라 무한스크롤 스크립트 추가 -->
+	<script>
+	
+	</script>
 </body>
 
 </html>
