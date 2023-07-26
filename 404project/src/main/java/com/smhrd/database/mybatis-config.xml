@@ -15,10 +15,7 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/smhrd/mapper/FeedMapper1.xml"/>
-    <mapper resource="com/smhrd/mapper/FollowMapper1.xml"/>
-    <mapper resource="com/smhrd/mapper/MemberMapper1.xml"/>
-
+    <mapper resource="com/smhrd/mapper/TestMapper.xml"/>
     
     
   </mappers>

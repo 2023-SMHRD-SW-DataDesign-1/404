@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.MemberMapper">
+
+
+<select id="login" parameterType="memberDTO" resultType="memberDTO" >
+select * from member where user_id = #{user_id} and password = #{password}
+</select>
+
+
+<insert id="join" parameterType="memberDTO">
+insert into member values(#{user_id} , #{password} , #{nickname} , #{gender} , #{age} , #{address} , #{phone_number})
+</insert>
+
+<update id="update" parameterType="memberDTO">
+ update member set password = #{password}, nickname = #{nickname}, age = #{age}, address = #{address}, phone_number = #{phone_number} where user_id = #{user_id}
+</update>
+
+<delete id="delete" parameterType="memberDTO" >
+ delete from member where user_id = #{user_id}
+</delete>
+
+</mapper>

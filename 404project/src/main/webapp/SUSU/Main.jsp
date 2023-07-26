@@ -274,7 +274,44 @@
 							</div>
 
 						</div>
+<<<<<<< HEAD
 						<!--items-->
+=======
+			</c:forEach>
+	<!-- 상품링크 끝 -->
+	<!-- 좋아요순 정렬끝 -->
+	<!-- 구독자순 정렬 시작 -->
+			<div class="profile">
+
+				<a href="../Channel/ChannelMain.jsp"> <img id="profile-img"
+					src="../img/profile_img.png" alt="프로필 사진"> <span
+					class="user-name">${sfeed_list.nickname}</span>
+				</a>
+			</div>
+
+			<div class="feed-img">
+				<!--사진을 클릭하면 피드 상세화면으로 이동 -->
+				<a href="../ChannelDetail/FeedDetail.jsp"> <img
+					src="../img/${sfeed_list.feed_image1}.jpg" class="card-img-top" alt="피드 사진">
+				</a>
+			</div>
+
+			<div class="feed-text">
+
+				<a href="../ChannelDetail/FeedDetail.jsp">
+
+					<p>${sfeed_list.text}</p>
+				</a>
+			</div>
+
+			<div class="feed-info">
+
+<!-- 상품상세페이지 연결링크 -->
+			<c:forEach var="productlink" items=${productlink_list}>
+				<div class="item_link">
+					<div>
+						<p id="title">상품태그</p>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
 					</div>
 					<!-- item_link-->
 
