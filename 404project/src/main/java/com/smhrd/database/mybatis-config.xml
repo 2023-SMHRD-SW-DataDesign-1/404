@@ -16,5 +16,7 @@
   </environments>
   <mappers>
     <mapper resource="com/smhrd/mapper/TestMapper.xml"/>
+    
+    
   </mappers>
 </configuration>
