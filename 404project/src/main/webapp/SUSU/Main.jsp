@@ -174,7 +174,8 @@
 							<div class="items">
 								<div class="item">
 
-									<a href="../Item/ItemDetail.jsp"> <!-- 상품이미지 -->
+									<!-- 상품이미지 -->
+									<a href="../Item/ItemDetail.jsp"> 
 										<div class="item-img">
 
 											<img
