@@ -140,8 +140,7 @@
 					
 					<div class="notice-content">
 
-						<img class="notice_img"
-							src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889">
+					
 						<p class="notice_txt">
 							<%= ndto.getText() %>
 						</p>

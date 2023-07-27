@@ -209,7 +209,7 @@
             <!-- 공지사항 피드를 클릭하면 공지사항 상세 피드로 이동 -->
                     <input type="hidden" value="<%= notice.getNoticeNo() %>" >
             <a href="../ChannelDetail/NoticeDetail.jsp?feedNo=<%= notice.getNoticeNo() %>">
-                <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
+                <div class="gray" style="width: 448px; height: 448px; background-color: whitesmoke;"></div>
                 <div class="card-body">
                     <p class="card-text"><%= notice.getTitle() %></p>
                 </div>
