@@ -260,7 +260,7 @@
 				            success: function(response) {
 				                // 서버에서 응답을 받았을 때의 처리
 				                if (response.success) {
-				                    $('.btn.btn-dark').text('언팔로우');
+				                    $('.btn btn-light').text('팔로잉');
 				                    showFolloingList += 1;
 				                } else {
 				                	$('.btn.btn-dark').text('팔로우');
