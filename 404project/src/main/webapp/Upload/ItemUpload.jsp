@@ -15,6 +15,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+    <!--jquery 사용하기  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -22,7 +25,7 @@
     <header>
 
         <div class="logo">
-            <a href="../SUSU/Main.jsp">
+            <a href="..SUSU//Main.jsp">
                 <img src="../img/logo_title.PNG" alt="logo">
 
             </a>
@@ -117,27 +120,38 @@
 
             <!-- 상품옵션 -->
             <div class="item-info">
-                <div class="left">
+                <div class="left" id="option-label">
                     <label class="label">상품옵션</label>
 
                 </div>
 
                 <div class="input" id="option">
-                    <!-- 옵션명 -->
-                    <input type="text" name="item_option" id="item_option" placeholder="옵션명 입력">
-                    <!-- 옵션 상품 개수 -->
-                    <input type="text" name="option_stock" id="option_stock" placeholder="옵션상품 수 입력">
+                    <div class="option-container">
 
-                    <!-- 추가 버튼 -->
-                    <div class="add">
-                        <!--추가 버튼 클릭 시 상품옵션 행 추가  -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-circle"
-                            viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                            <path
-                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                        </svg>
+                        <div class="option-edit">
+
+                            <!-- 옵션명 -->
+                            <input type="text" name="item_option" class="item_option" placeholder="옵션명 입력">
+                            <!-- 옵션 상품 개수 -->
+                            <input type="text" name="option_stock" class="option_stock" placeholder="옵션상품 수 입력">
+                            <!-- 추가 버튼 -->
+                            <div class="add">
+                                <!--추가 버튼 클릭 시 상품옵션 행 추가  -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-circle"
+                                    viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                            </div>
+
+                  
+
+                        </div>
+
+
                     </div>
+
                 </div>
 
 
@@ -158,14 +172,14 @@
                 <textarea name="item-text" id="item-text" cols="30" rows="10"></textarea>
             </div>
 
-            <div class="file">
+            <!-- <div class="file">
 
                 <div class="item-file">
                     <input class="upload-name" value="첨부파일" placeholder="첨부파일">
                     <label for="file">파일찾기</label>
                     <input type="file" id="file">
                 </div>
-            </div>
+            </div> -->
 
 
             <div class="item-ctg">
@@ -184,46 +198,41 @@
     </div>
 
 
-    <!-- 파일 이름 입력창에 넣어주는 js -->
-    <script>
-        $("#file").on('change', function () {
-            var fileName = $("#file").val();
-            $(".upload-name").val(fileName);
-        });
-    </script>
-
 
     <!-- 상품옵션을 추가하는 jQuery 코드 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
     <script>
-
-
-        // jQuery를 사용하여 document가 준비되면 실행
         $(document).ready(function () {
-            // class가 "bi bi-plus-circle"인 svg 버튼 클릭 이벤트 처리
-            $(".bi.bi-plus-circle").click(function () {
-                // 새로운 input 태그 2개를 생성
-                var newInput1 = $("<input>").attr({
-                    type: "text",
-                    name: "item_option",
-                    placeholder: "옵션명 입력"
-                });
-                var newInput2 = $("<input>").attr({
-                    type: "text",
-                    name: "option_stock",
-                    placeholder: "옵션상품 수 입력"
+            // Use event delegation for the ".add" class to handle clicks on both existing and dynamically added elements
+            $(document).on("click", ".add", function () {
+                $(".option-edit").append(
+                    "<input type='text' name='item_option' class='item_option' placeholder='옵션명 입력'>",
+                    "<input type='text' name='option_stock' class='option_stock' placeholder='옵션상품 수 입력'>",
+                    "<div class='add'><svg xmlns='http://www.w3.org/2000/svg' fill='currentColor' class='bi bi-plus-circle' viewBox='0 0 16 16'><path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' /><path d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z' /></svg>",
+                    "</div>"
+                );
+
+                // option id를 가진 div의 높이를 가져와서 최대 높이를 구합니다.
+                var maxHeight = 0;
+                $("#option").each(function () {
+                    var optionHeight = $(this).height();
+                    if (optionHeight > maxHeight) {
+                        maxHeight = optionHeight;
+                    }
                 });
 
-                // 추가되는 input 태그들과 svg 태그를 감싸는 div 생성
-                var newDiv = $("<div>").addClass("input");
-                
-                newDiv.append(newInput1, newInput2, $(this).clone());
-
-                // class명이 "input"인 div를 찾아서 마지막에 생성된 div를 추가
-                $("#option").last().after(newDiv);
+                // option-label div 요소의 높이를 최대 높이로 설정합니다.
+                $("#option-label").height(maxHeight);
             });
         });
     </script>
+
+
+ 
+ 
+
+
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
