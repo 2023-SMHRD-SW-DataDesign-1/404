@@ -24,7 +24,10 @@
 	rel="stylesheet">
 
 
-
+<!-- jquery 사용 -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+</script>
 <title>동영상 상세</title>
 
 </head>
@@ -127,7 +130,7 @@
 						<div class="profile_box">
 							<!-- 프로필 사진 -->
 
-							<img class="profile_img" src="/img/profile_img.png">
+							<img class="profile_img" src="../img/profile_img.png">
 
 						</div>
 
@@ -221,7 +224,56 @@
 		</div>
 	</div>
 
+	<!-- 팔로우, 좋아요 -->
+	<script type="text/javascript">
+				$(document).ready(function() {
+					let showFollowerList = 0;
+				    let showFolloingList = 0;
+				    $('.btn.btn-dark').click(function() {
+				        // 팔로우 정보 생성
+				        var followData = {
+				            follower: 'follower_nickname',
+				            following: 'following_nickname'
+				        };
+				        // 서버에 팔로우 정보 전송
+				        $.ajax({
+				            url: 'follow',
+				            type: 'POST',
+				            data: followData,
+				            success: function(response) {
+				                // 서버에서 응답을 받았을 때의 처리
+				                if (response.success) {
+				                    $('.btn btn-light').text('팔로잉');
+				                    showFolloingList += 1;
+				                } else {
+				                	$('.btn.btn-dark').text('팔로우');
+				                	showFollowerList -= 1;
+				                }
+				            },
+				            error: function(error) {
+				                // 서버와 통신 중에 오류가 발생했을 때의 처리
+				                alert('서버와 통신 중에 오류가 발생했습니다.');
+				            }
+				        });
+				    });
+				});
+				const heart = document.querySelector('.bi-heart');
+				const likeCount = document.querySelector('.like_count');
+				let count = 0;
+				heart.addEventListener('click', () => {
+				    heart.classList.toggle('filled');
+				    if (heart.classList.contains('filled')) {
+				        heart.setAttribute('fill', 'red');
+				        count += 1;
+				        likeCount.innerHTML = `<b>좋아요</b> ${count}개`;
+				    } else {
+				        heart.setAttribute('fill', 'currentColor');
+				        count -= 1;
+				        likeCount.innerHTML = `<b>좋아요</b> ${count}개`;
+				    }
+				});
 
+				</script>
 
 </body>
 
