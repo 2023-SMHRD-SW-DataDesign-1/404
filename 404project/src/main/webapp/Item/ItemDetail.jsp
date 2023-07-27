@@ -13,16 +13,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<!-- jquery 연결 -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
-    </script>
+
 </head>
 
 <body>
 
-      <!-- 상단부 -->
-      <div class="user">
+    <!-- 상단부 -->
+    <div class="user">
 
         <a href="../SUSU/JoinMain.jsp">회원가입</a>
         <a href="../SUSU/Login.jsp">로그인</a>
@@ -122,40 +119,49 @@
                 <li class="item-price"><b>23,400원</b></li>
             </ul>
 
+
+
             <div class="item-option">
 
-                <select name="optionlist[]" label="색상선택" opt_type="SELECT"
-                    opt_id="1" opt_mix="Y" require="Y" opt_mandatory="Y" class="basic_option">
+                <select name="optionlist[]" onchange=" handleOnChange(this)" label="색상선택" opt_type="SELECT" opt_id="1"
+                    opt_mix="Y" require="Y" opt_mandatory="Y" class="basic_option">
 
                     <option value="">옵션 선택</option>
 
-                    <option value="0" title="민트(size. S)" matrix="1" price="0" sto_id="1" dis_sto_price=""
+                    <option value="0" title="민트(size. S)" matrix="1" price="23,400" sto_id="1" dis_sto_price=""
                         dis_opt_price="" org_opt_price="0" sto_state="SALE">민트(size. S)</option>
 
-                    <option value="1" title="민트(size. M)" matrix="2" price="0" sto_id="2" dis_sto_price=""
-                        dis_opt_price="" org_opt_price="0" sto_state="SOLDOUT">민트(size. M) - 품절</option>
+                    <option value="1" title="민트(size. M)" matrix="2" price="23,400" sto_id="2" dis_sto_price=""
+                        dis_opt_price="" org_opt_price="0" sto_state="SOLDOUT">민트(size. M)</option>
 
-                    <option value="2" title="버건디(size. S)" matrix="3" price="0" sto_id="3" dis_sto_price=""
+                    <option value="2" title="버건디(size. S)" matrix="3" price="23,400" sto_id="3" dis_sto_price=""
                         dis_opt_price="" org_opt_price="0" sto_state="SALE">버건디(size. S)</option>
 
-                    <option value="3" title="버건디(size. M)" matrix="4" price="0" sto_id="4" dis_sto_price=""
+                    <option value="3" title="버건디(size. M)" matrix="4" price="23,400" sto_id="4" dis_sto_price=""
                         dis_opt_price="" org_opt_price="0" sto_state="SALE">버건디(size. M)</option>
 
-                    <option value="4" title="블랙(size. S)" matrix="5" price="0" sto_id="5" dis_sto_price=""
+                    <option value="4" title="블랙(size. S)" matrix="5" price="23,400" sto_id="5" dis_sto_price=""
                         dis_opt_price="" org_opt_price="0" sto_state="SALE">블랙(size. S)</option>
 
-                    <option value="5" title="블랙(size. M)" matrix="6" price="0" sto_id="6" dis_sto_price=""
-                        dis_opt_price="" org_opt_price="0" sto_state="SOLDOUT">블랙(size. M) - 품절</option>
+                    <option value="5" title="블랙(size. M)" matrix="6" price="23,400" sto_id="6" dis_sto_price=""
+                        dis_opt_price="" org_opt_price="0" sto_state="SOLDOUT">블랙(size. M)</option>
+
                 </select>
-                <!-- 옵션출력을 위한 p태그 추가 -->
-                <p class="selected-option"></p>
+
+                <div id="result"></div>
             </div>
 
-             <!-- 장바구니, 주문하기 버튼 -->
-             <div class="button">
-                <a href="/Mypage/CartList.jsp"> <button type="submit" id="cart">장바구니</button></a>
+            <!-- 장바구니, 주문하기 버튼 -->
+            <div class="button">
+                <!-- 장바구니 버튼 -->
+                <!-- js로 아래 페이지로 데이터 전송하는 코드를 작성함, 확인 후 a 태그 지워도 됨 -->
+                <a href="../Mypage/CartList.jsp"> <button type="submit" id="cart">장바구니</button></a>
+                
+                <!-- js로 아래 페이지로 데이터 전송하는 코드를 작성함, 확인 후 a 태그 지워도 됨 -->
+                <!-- 주문하기 버튼 -->
                 <a href="./Order.jsp"> <button type="submit" id="order">주문하기</button></a>
             </div>
+
 
         </div>
 
@@ -164,8 +170,8 @@
 
     <div class="item-ctg">
         <ul>
-            <li ><a id="select" href="./InfoDetail.jsp">상세정보</a></li>
-            <li ><a href="./Review.jsp">리뷰</a></li>
+            <li><a id="select" href="./InfoDetail.jsp">상세정보</a></li>
+            <li><a href="./Review.jsp">리뷰</a></li>
 
         </ul>
 
@@ -178,16 +184,99 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    
-    // 옵션 변경할때마다 옵션출력
-    const selectElement = document.querySelector('.basic_option');
-	const selectedOptionElement = document.querySelector('.selected-option');
-	selectElement.addEventListener("change", (event) => {
- 	 selectedOptionElement.textContent = `Selected option: ${event.target.value}`;
-});
+        </script>
 
-   </script>
 
+
+    <!-- 옵션 값 출력 -->
+
+    <script>
+        // 선택한 옵션이 변경되었을 때 호출되는 함수
+        function handleOnChange(selectElement) {
+            // 선택한 옵션 요소 가져오기
+            var selectedOptionIndex = selectElement.selectedIndex;
+            var selectedOption = selectElement.options[selectedOptionIndex];
+
+            // 선택한 옵션의 title과 price 속성값 가져오기
+            var title = selectedOption.getAttribute("title");
+            var price = selectedOption.getAttribute("price");
+
+            // 출력할 내용 생성
+            var content = "<span id='option-name'>" + title + "</span>";
+            content += "<button id='minus'>-</button>";
+            content += "<input type='text' id='option-stock' value='1'>"
+            content += "<button id='plus'>+</button>";
+            content += "<span id='price' style='text-align: right;'>가격: " + price + "</span>";
+
+            // "result" div에 선택한 옵션의 세부 정보 출력
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = content;
+            resultDiv.style.width = "500px";
+            resultDiv.style.height = "50px";
+            resultDiv.style.backgroundColor = "whitesmoke";
+            resultDiv.style.padding = '10px';
+
+            // 옵션수량 증가
+            var plusButton = document.getElementById('plus');
+            plusButton.onclick = function () {
+                var inputElement = document.getElementById("option-stock");
+                var currentValue = parseInt(inputElement.value) || 0;
+                inputElement.value = currentValue + 1;
+            };
+
+            //옵션수량 감소
+            var minusButton = document.getElementById('minus');
+            minusButton.onclick = function () {
+                var inputElement = document.getElementById("option-stock");
+                var currentValue = parseInt(inputElement.value) || 0;
+                if (currentValue > 1) {
+                    inputElement.value = currentValue - 1;
+                }
+            };
+        }
+
+        // "장바구니" 버튼 클릭 시 데이터를 Mypage/CartList.jsp 페이지로 전달
+        var cartButton = document.getElementById("cart");
+        cartButton.onclick = function () {
+            // 선택한 옵션의 title, price, 수량 정보 가져오기
+            var selectedOptionIndex = selectElement.selectedIndex;
+            var selectedOption = selectElement.options[selectedOptionIndex];
+            var title = selectedOption.getAttribute("title");
+            var price = selectedOption.getAttribute("price");
+            var quantity = parseInt(document.getElementById("option-stock").value) || 1;
+
+            // 전달할 데이터를 URL 파라미터 형식으로 생성
+            var data = "?title=" + encodeURIComponent(title) +
+                "&price=" + encodeURIComponent(price) +
+                "&quantity=" + encodeURIComponent(quantity);
+
+            // Mypage/CartList.jsp 페이지로 데이터 전달
+            window.location.href = "../Mypage/CartList.jsp" + data;
+        };
+
+        // 주문하기 버튼 클릭 시 데이터를 Order.jsp 파일로 전송
+        var orderButton = document.getElementById("order");
+        orderButton.onclick = function () {
+            // 선택한 옵션의 title, price, 그리고 수량 정보 가져오기
+            var selectedOptionIndex = selectElement.selectedIndex;
+            var selectedOption = selectElement.options[selectedOptionIndex];
+            var title = selectedOption.getAttribute("title");
+            var price = selectedOption.getAttribute("price");
+            var quantity = parseInt(document.getElementById("option-stock").value) || 1;
+
+            // 전달할 데이터를 URL 파라미터 형식으로 생성
+            var data = "?title=" + encodeURIComponent(title) +
+                "&price=" + encodeURIComponent(price) +
+                "&quantity=" + encodeURIComponent(quantity);
+
+            // Order.jsp 파일로 데이터 전송
+            window.location.href = "../Order.jsp" + data;
+        };
+
+
+
+
+    </script>
 
 </body>
 
