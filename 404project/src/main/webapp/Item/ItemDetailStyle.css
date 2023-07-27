@@ -134,7 +134,7 @@ input.form-control {
 
 }
 
-
+/* 상품이미지 */
 .item-img {
     margin-left: 20%;
 }
@@ -149,6 +149,7 @@ input.form-control {
 .item-info ul {
     list-style-type: none;
 }
+
 
 /* 상품이름 */
 .item-name {
@@ -183,6 +184,38 @@ input.form-control {
 }
 
 
+#result{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#result span{
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+#option-name{
+    padding-right: 50px;
+}
+
+#plus, #minus{
+    padding-left: 5px;
+    padding-right: 5px;
+    color: gray;
+    background-color: white;
+    border: 1px solid #ccc;;
+    border-radius: 3px;
+}
+
+#result input{
+    width: 50px;
+    border:none;
+    text-align: center;
+}
+
+#price{
+    padding-left: 50px;
+}
 
 /* 장바구니, 주문하기 버튼 */
 .button{
