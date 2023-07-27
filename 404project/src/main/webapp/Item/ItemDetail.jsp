@@ -198,15 +198,15 @@
             var selectedOption = selectElement.options[selectedOptionIndex];
 
             // 선택한 옵션의 title과 price 속성값 가져오기
-            var title = selectedOption.getAttribute("title");
-            var price = selectedOption.getAttribute("price");
+            var productName = selectedOption.getAttribute("title");
+            var orderPrice = selectedOption.getAttribute("price");
 
             // 출력할 내용 생성
-            var content = "<span id='option-name'>" + title + "</span>";
+            var content = "<span id='option-name'>" + productName + "</span>";
             content += "<button id='minus'>-</button>";
             content += "<input type='text' id='option-stock' value='1'>"
             content += "<button id='plus'>+</button>";
-            content += "<span id='price' style='text-align: right;'>가격: " + price + "</span>";
+            content += "<span id='price' style='text-align: right;'>가격: " + orderPrice + "</span>";
 
             // "result" div에 선택한 옵션의 세부 정보 출력
             var resultDiv = document.getElementById("result");
@@ -241,14 +241,14 @@
             // 선택한 옵션의 title, price, 수량 정보 가져오기
             var selectedOptionIndex = selectElement.selectedIndex;
             var selectedOption = selectElement.options[selectedOptionIndex];
-            var title = selectedOption.getAttribute("title");
-            var price = selectedOption.getAttribute("price");
-            var quantity = parseInt(document.getElementById("option-stock").value) || 1;
+            var productName = selectedOption.getAttribute("title");
+            var orderPrice = selectedOption.getAttribute("price");
+            var orderQuantity = parseInt(document.getElementById("option-stock").value) || 1;
 
             // 전달할 데이터를 URL 파라미터 형식으로 생성
-            var data = "?title=" + encodeURIComponent(title) +
-                "&price=" + encodeURIComponent(price) +
-                "&quantity=" + encodeURIComponent(quantity);
+            var data = "?productName=" + encodeURIComponent(productName) +
+                "&orderPrice=" + encodeURIComponent(orderPrice) +
+                "&orderQuantity=" + encodeURIComponent(orderQuantity);
 
             // Mypage/CartList.jsp 페이지로 데이터 전달
             window.location.href = "../Mypage/CartList.jsp" + data;
@@ -260,14 +260,14 @@
             // 선택한 옵션의 title, price, 그리고 수량 정보 가져오기
             var selectedOptionIndex = selectElement.selectedIndex;
             var selectedOption = selectElement.options[selectedOptionIndex];
-            var title = selectedOption.getAttribute("title");
-            var price = selectedOption.getAttribute("price");
-            var quantity = parseInt(document.getElementById("option-stock").value) || 1;
+            var productName = selectedOption.getAttribute("productName");
+            var orderPrice = selectedOption.getAttribute("orderPrice");
+            var orderQuantity = parseInt(document.getElementById("option-stock").value) || 1;
 
             // 전달할 데이터를 URL 파라미터 형식으로 생성
-            var data = "?title=" + encodeURIComponent(title) +
-                "&price=" + encodeURIComponent(price) +
-                "&quantity=" + encodeURIComponent(quantity);
+            var data = "?productName=" + encodeURIComponent(productName) +
+                "&orderPrice=" + encodeURIComponent(orderPrice) +
+                "&orderQuantity=" + encodeURIComponent(orderQuantity);
 
             // Order.jsp 파일로 데이터 전송
             window.location.href = "../Order.jsp" + data;
