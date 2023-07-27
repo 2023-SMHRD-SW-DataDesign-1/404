@@ -131,7 +131,7 @@
                         <div class="profile_box">
                             <!-- 프로필 사진 -->
                             
-                            <img class="profile_img" src="/img/profile_img.png">
+                            <img class="profile_img" src="../img/profile_img.png">
                             
                         </div>
                         
@@ -215,18 +215,18 @@
                     <p>댓글</p>
 
                     <div>
-                        <img src="/img/profile_img.png" alt="회원프로필사진">
+                        <img src="../img/profile_img.png" alt="회원프로필사진">
                         <p class="reply_txt"> <b> suzy022 </b>제품 어디서 살 수 있나요? </p>
                     </div>
 
                     <div>
 
-                        <img src="/img/profile_img.png" alt="회원프로필사진">
+                        <img src="../img/profile_img.png" alt="회원프로필사진">
                         <p class="reply_txt"> <b> chew012 </b> 가방 예쁘다</p>
                     </div>
 
                     <div>
-                        <img src="/img/profile_img.png" alt="회원프로필사진">
+                        <img src="../img/profile_img.png" alt="회원프로필사진">
                         <p class="reply_txt"> <b> hoo486 </b> 모델착장정보 궁금해요~ </p>
                     </div>
 
@@ -274,9 +274,10 @@
 				        });
 				    });
 				});
+				// 좋아요
 				const heart = document.querySelector('.bi-heart');
 				const likeCount = document.querySelector('.like_count');
-				let count = 0;
+				let count = 10;
 				heart.addEventListener('click', () => {
 				    heart.classList.toggle('filled');
 				    if (heart.classList.contains('filled')) {
@@ -289,7 +290,33 @@
 				        likeCount.innerHTML = `<b>좋아요</b> ${count}개`;
 				    }
 				});
+				
+				// 댓글입력
+				const commentIcon = document.querySelector('.bi-chat-square');
+				commentIcon.addEventListener('click', createCommentInput);
+				
+				function createCommentInput() {
+				    const commentSection = document.querySelector('.feed_reply');
+				    const existingCommentInput = commentSection.querySelector('input');
+				    if (existingCommentInput) {
+				        return;
+				    }
 
+				    const commentInput = document.createElement('input');
+				    commentInput.setAttribute('type', 'text');
+				    commentInput.setAttribute('placeholder', '댓글을 입력해주세요~');
+				    commentSection.appendChild(commentInput);
+
+				    commentInput.addEventListener('keyup', (event) => {
+				        if (event.key === 'Enter') {
+				            const commentText = event.target.value;
+				            const newComment = document.createElement('div');
+				            newComment.innerHTML = `<img src="../img/profile_img.png" alt="회원프로필사진"><p class="reply_txt"><b>Username</b>${commentText}</p>`;
+				            commentSection.appendChild(newComment);
+				            event.target.remove();
+				        }
+				    });
+				}
 				</script>
 
 </body>
