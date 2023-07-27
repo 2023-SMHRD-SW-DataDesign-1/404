@@ -1,3 +1,7 @@
+<%@page import="com.smhrd.model.NoticeDAO"%>
+<%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
+<%@page import="com.smhrd.model.NoticeDAO"%>
+<%@page import="com.smhrd.model.NoticeDTO1"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -108,9 +112,20 @@
 
 	</header>
 
+<%
+	int noticeNo = Integer.parseInt(request.getParameter("noticeNo"));
+	
+	NoticeDTO1 ndto= new NoticeDTO1(noticeNo);
+	NoticeDAO ndao =new NoticeDAO(); 
+	
+	if(ndto!=null){
+		ndto = ndao.showOneNotice(noticeNo);
+		
+	}
+	
 
-
-
+%>
+ 
 	<!-- 피드 창 -->
 	<div class="main_feed">
 		<div class="left_feed">
@@ -119,8 +134,8 @@
 				<!-- 공지사항 피드 -->
 				<div class="notice_feed">
 					<div class="notice_title">
-						<b>[공지]뜨개상품 배송안내</b>
-						<p>2023.7.24</p>
+						<b><%= ndto.getTitle()%></b>
+						<p><%= ndto.getTime() %></p>
 					</div>
 					
 					<div class="notice-content">
@@ -128,8 +143,7 @@
 						<img class="notice_img"
 							src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889">
 						<p class="notice_txt">
-							기본 제품은 상품준비기간이 3-4일 정도 소요되며, 완성품은 7일 내에 배송될 예정입니다. <br> <br>
-							주문제작 제품은 상품준비기간이 7일~14일 정도 소요되며, 완성품은 7일 내에 배송될 예정입니다.
+							<%= ndto.getText() %>
 						</p>
 					</div>
 				</div>

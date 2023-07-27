@@ -18,6 +18,8 @@ public class FeedDAO {
 
 	static SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 
+	
+	
 	public int uploadFeed(FeedDTO fdto) {
 
 		SqlSession session = sqlSessionFactory.openSession(true);
