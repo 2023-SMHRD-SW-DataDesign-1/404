@@ -319,7 +319,9 @@ input.form-control {
     margin-right: 20px;
    
 }
-
+.feed_like, .feed_reply{
+	cursor: pointer;
+}
 
 
 /* 상품연결링크 */
