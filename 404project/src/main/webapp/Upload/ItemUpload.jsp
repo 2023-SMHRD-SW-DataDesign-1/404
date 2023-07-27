@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +25,7 @@
     <header>
 
         <div class="logo">
-            <a href="..SUSU//Main.jsp">
+            <a href="../SUSU/Main.">
                 <img src="../img/logo_title.PNG" alt="logo">
 
             </a>
@@ -34,7 +34,7 @@
 
         <div class="user-actions">
             <!-- 채팅 -->
-            <a href="../SUSU/Chat.jsp">
+            <a href="../SUSU/Chat.">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chat-dots" viewBox="0 0 16 16">
@@ -46,7 +46,7 @@
 
             </a>
             <!-- 나의 채널 -->
-            <a href="../Seller/MychannelMain.jsp">
+            <a href="../Seller/MychannelMain.">
 
                 <svg id="mychannel" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-instagram" viewBox="0 0 16 16">
@@ -56,7 +56,7 @@
             </a>
 
             <!-- 장바구니 -->
-            <a href="../Mypage/CartList.jsp">
+            <a href="../Mypage/CartList.">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2"
                     viewBox="0 0 16 16">
                     <path
@@ -65,7 +65,7 @@
             </a>
 
             <!-- 마이페이지 -->
-            <a href="../Mypage/CartList.jsp">
+            <a href="../Mypage/CartList.">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-person-gear" viewBox="0 0 16 16">
                     <path
@@ -78,7 +78,7 @@
     <div class="item-board">
         <h1>상품등록</h1>
         <!-- 상품정보 전송 -->
-        <form action="">
+        <form>
 
             <!-- 상품명 -->
             <div class="item-info">
@@ -88,7 +88,7 @@
                 </div>
                 <div class="input">
 
-                    <input type="text" name="item_name" id="item_name" placeholder="상품명을 입력하세요 예)니트가디건">
+                    <input type="text" name="item_name" id="item_name" placeholder="상품명을 입력하세요 예)니트가디건" required>
                 </div>
             </div>
 
@@ -100,7 +100,7 @@
                 </div>
                 <div class="input">
 
-                    <input type="text" name="item_price" id="item_price" placeholder="상품가격을 입력하세요 예)12,000원">
+                    <input type="text" name="item_price" id="item_price" placeholder="상품가격을 입력하세요 예)12,000원" required>
                 </div>
             </div>
 
@@ -113,7 +113,7 @@
 
                 <div class="input">
 
-                    <input type="text" name="item_stock" id="item_stock" placeholder="20개">
+                    <input type="text" name="item_stock" id="item_stock" placeholder="20개" required>
 
                 </div>
             </div>
@@ -130,10 +130,13 @@
 
                         <div class="option-edit">
 
+
+
                             <!-- 옵션명 -->
-                            <input type="text" name="item_option" class="item_option" placeholder="옵션명 입력">
+                            <input type="text" name="item_option" class="item_option" placeholder="옵션명 입력" required>
                             <!-- 옵션 상품 개수 -->
-                            <input type="text" name="option_stock" class="option_stock" placeholder="옵션상품 수 입력">
+                            <input type="text" name="option_stock" class="option_stock" placeholder="옵션상품 수 입력"
+                                required>
                             <!-- 추가 버튼 -->
                             <div class="add">
                                 <!--추가 버튼 클릭 시 상품옵션 행 추가  -->
@@ -145,7 +148,15 @@
                                 </svg>
                             </div>
 
-                  
+                            <div class="delete">
+                                <!--삭제 버튼 클릭 시 상품옵션 행 삭제  -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle"
+                                    viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path
+                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </div>
 
                         </div>
 
@@ -164,22 +175,22 @@
                     <label class="label">상품재료</label>
                 </div>
                 <div class="input">
-                    <input type="text" name="material" id="material">
+                    <input type="text" name="material" id="material" required>
                 </div>
             </div>
 
             <div class="item-info">
-                <textarea name="item-text" id="item-text" cols="30" rows="10"></textarea>
+                <textarea name="item-text" id="item-text" cols="30" rows="10" required></textarea>
             </div>
 
-            <!-- <div class="file">
+            <div class="file">
 
                 <div class="item-file">
                     <input class="upload-name" value="첨부파일" placeholder="첨부파일">
                     <label for="file">파일찾기</label>
                     <input type="file" id="file">
                 </div>
-            </div> -->
+            </div>
 
 
             <div class="item-ctg">
@@ -191,13 +202,43 @@
 
             <div>
 
-                <button type="submit" id="upload"><a href="../Seller/MyItemList.jsp">상품등록</a></button>
+                <button type="submit" id="upload">상품등록</button>
 
             </div>
         </form>
     </div>
 
+    <!-- 입력필수 안내창 js -->
+    <script>
+        // JavaScript to handle custom validation messages
+        const inputElements = document.querySelectorAll('input[required]');
+        inputElements.forEach((input) => {
+          input.addEventListener('invalid', (event) => {
+            event.preventDefault();
+            input.setCustomValidity(''); // Reset the custom validity message to prevent browser's default message
+            if (!input.value.trim()) {
+              input.setCustomValidity('이 입력란을 입력하세요');
+            }
+          });
+    
+          input.addEventListener('input', (event) => {
+            input.setCustomValidity(''); // Reset the custom validity message when the user starts typing again
+          });
+        });
+      </script>
 
+      
+
+
+    <!-- 파일 이름 입력창에 넣어주는 js -->
+    <script>
+        $(document).ready(function () {
+            $("#file").on('change', function () {
+                var fileName = $(this).val().split('\\').pop();
+                $(".upload-name").val(fileName);
+            });
+        });
+    </script>
 
     <!-- 상품옵션을 추가하는 jQuery 코드 -->
 
@@ -229,8 +270,7 @@
     </script>
 
 
- 
- 
+
 
 
 
@@ -238,6 +278,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+
+
 
 </body>
 
