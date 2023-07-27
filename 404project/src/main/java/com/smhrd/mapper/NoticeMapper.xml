@@ -12,4 +12,8 @@
 		select title from notice where nickname=#{nickname}
 	</select>
   
+    <select id="showOneNotice" resultType="com.smhrd.model.NoticeDTO1" parameterType="int">
+  		select * from notice where notice_no=#{noticeNo}
+  	</select>
+  
 </mapper>

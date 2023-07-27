@@ -36,4 +36,17 @@ public class NoticeDAO {
 		
 		return noticeAll_list;	
 	}
+	
+	public static NoticeDTO1 showOneNotice(int noticeNo){
+		
+		System.out.println(noticeNo);
+		SqlSession session=sqlSessionFactory.openSession(true);
+		
+		NoticeDTO1 ndto = session.selectOne("showOneNotice",noticeNo);
+		System.out.println(ndto);
+		session.close();
+		
+		return ndto ;
+	}
+	
 }

@@ -36,7 +36,10 @@ public class NoticeDTO1 {
 	}
     
     
-    
+	public NoticeDTO1(int noticeNo) {
+		super();
+		this.noticeNo = noticeNo;
+	}
     
     
 }
