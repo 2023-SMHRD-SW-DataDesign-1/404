@@ -1,3 +1,7 @@
+<%@page import="com.smhrd.model.NoticeDAO"%>
+
+<%@page import="com.smhrd.model.NoticeDTO1"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -121,7 +125,11 @@
             <!-- 프로필 사진 -->
             <img src="../img/profile_img.png" alt="user-profile">
             <!-- 작가 닉네임 -->
-            <p id="nickname">작가 닉네임</p>
+<p id="nickname">
+    <% //String nickname = (String) session.getAttribute("nickname"); @@지홍 로그인했을때 사용할것  %>
+	<%String nickname="abc"; %>
+    <%= nickname %>
+</p>
 
             <!-- 작가 소개글 -->
             <p>작가 소개글</p>
@@ -185,111 +193,33 @@
     <div class="post-box">
         <div class="row">
 
-            <div class="col-lg-4">
+ 
+<%
+	NoticeDTO1 ndto= new NoticeDTO1(nickname);
+	NoticeDAO ndao =new NoticeDAO();
+    ArrayList<NoticeDTO1> noticeList = ndao.showAllNotice(nickname);
+%>
 
-                <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
-                    <a href="../SellerDetail/MyNoticeDetail.jsp">
-
-                        <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">공지사항</p>
-
-                        </div>
-                    </a>
+<% 
+	for (int i = 0; i < noticeList.size(); i++) {
+    NoticeDTO1 notice = noticeList.get(i);
+%>
+    <div class="col-lg-4">
+        <div class="card">
+            <!-- 공지사항 피드를 클릭하면 공지사항 상세 피드로 이동 -->
+                    <input type="hidden" value="<%= notice.getNoticeNo() %>" >
+            <a href="../ChannelDetail/NoticeDetail.jsp?feedNo=<%= notice.getNoticeNo() %>">
+                <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"><%= notice.getTitle() %></p>
                 </div>
+            </a>
+        </div>
+    </div>
+<% } %>
+ 
 
-
-            </div>
-
-            <div class="col-lg-4">
-
-
-                <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
-                    <a href="../SellerDetail/MyNoticeDetail.jsp">
-
-                        <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">공지사항</p>
-
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="col-lg-4">
-
-  
-                <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
-                    <a href="../SellerDetail/MyNoticeDetail.jsp">
-
-                        <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">공지사항</p>
-
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-4">
-
-  
-                <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
-                    <a href="../SellerDetail/MyNoticeDetail.jsp">
-
-                        <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">공지사항</p>
-
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-4">
-
-    
-                <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
-                    <a href="../SellerDetail/MyNoticeDetail.jsp">
-
-                        <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">공지사항</p>
-
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-4">
-
-
-                <div class="card">
-                    <!-- 공지사항 피드를 클릭하면 공지사항 상세페이지로 이동 -->
-                    <a href="../SellerDetail/MyNoticeDetail.jsp">
-
-                        <img src="../img/profile_ex.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">공지사항</p>
-
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
+          
 
 
 

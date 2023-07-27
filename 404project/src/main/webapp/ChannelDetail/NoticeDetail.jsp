@@ -1,5 +1,5 @@
 <%@page import="com.smhrd.model.NoticeDAO"%>
-<%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
+<%//@page import="com.google.protobuf.TextFormatParseInfoTree"%>
 <%@page import="com.smhrd.model.NoticeDAO"%>
 <%@page import="com.smhrd.model.NoticeDTO1"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
