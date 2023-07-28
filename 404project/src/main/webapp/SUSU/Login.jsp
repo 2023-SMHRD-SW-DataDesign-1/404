@@ -68,10 +68,10 @@
 
     <div class="login-container">
         <h1>로그인</h1>
-        <form>
+        <form action="/loginControl" method="post" >
             <div class="form-group">
                 <label for="id">아이디</label>
-                <input type="text" id="id" name="id" required>
+                <input type="text" id="id" name="member_id" required>
             </div>
             <div class="form-group">
                 <label for="password">비밀번호</label>

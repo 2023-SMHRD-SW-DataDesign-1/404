@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.model.FeedCommentDTO;
-import com.smhrd.model.FeedDAO;
+
+import com.smhrd.model.FeedCommentDTO1;
+import com.smhrd.model.FeedDAO1;
 
 
 @WebServlet("/CommentCon")
@@ -18,16 +19,18 @@ public class CommentCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String feed_no= request.getParameter("feed_no");
+		int feedNo= Integer.parseInt(request.getParameter("feedNo"));
+		String profileImage = request.getParameter("profileImage");
 		String nickname= request.getParameter("nickname");
-//		String repl = request.getParameter("repl");
+		String text = request.getParameter("text");
 		
-		System.out.println(feed_no);
+		System.out.println(feedNo);
+		System.out.println(profileImage);
 		System.out.println(nickname);
-		System.out.println(repl);
+		System.out.println(text);
 		
-//		FeedCommentDTO fcdto = new FeedCommentDTO(feed_no,nickname,repl);
-//		FeedDAO fdao = new FeedDAO();
+		FeedCommentDTO1 fcdto = new FeedCommentDTO1(feedNo, "asd", "모모제작소", text, 0);
+		FeedDAO1 fdao = new FeedDAO1();
 		
 		int row = fdao.saveComment(fcdto);
 		
@@ -38,7 +41,7 @@ public class CommentCon extends HttpServlet {
 		}
 		
 		
-		response.sendRedirect("./FeedList.jsp");
+		response.sendRedirect("ChannelDetail/FeedDetail.jsp");
 		
 	}
 

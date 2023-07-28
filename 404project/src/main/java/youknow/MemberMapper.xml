@@ -6,20 +6,20 @@
 
 
 <select id="login" parameterType="memberDTO" resultType="memberDTO" >
-select * from member where user_id = #{user_id} and password = #{password}
+select * from member where member_id = #{member_id} and password = #{password}
 </select>
 
 
 <insert id="join" parameterType="memberDTO">
-insert into member values(#{user_id} , #{password} , #{nickname} , #{gender} , #{age} , #{address} , #{phone_number})
+insert into member values(#{member_id} , #{password} , #{nickname} , #{gender} , #{age} , #{address} , #{phone})
 </insert>
 
 <update id="update" parameterType="memberDTO">
- update member set password = #{password}, nickname = #{nickname}, age = #{age}, address = #{address}, phone_number = #{phone_number} where user_id = #{user_id}
+ update member set password = #{password}, nickname = #{nickname}, age = #{age}, address = #{address}, phone_number = #{phone} where member_id = #{member_id}
 </update>
 
 <delete id="delete" parameterType="memberDTO" >
- delete from member where user_id = #{user_id}
+ delete from member where member_id = #{member_id}
 </delete>
 
 </mapper>

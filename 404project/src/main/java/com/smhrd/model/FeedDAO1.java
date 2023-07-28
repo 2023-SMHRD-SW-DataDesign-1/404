@@ -32,6 +32,9 @@ public class FeedDAO1 {
 	}
 
 	public int saveComment(FeedCommentDTO1 fcdto) {
+		
+		System.out.println("댓글저장정보: "+fcdto);
+				
 		SqlSession session = sqlSessionFactory.openSession(true);
 		int row = session.insert("saveComment", fcdto);
 		session.close();

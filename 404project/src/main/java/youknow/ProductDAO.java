@@ -8,16 +8,16 @@ import com.smhrd.database.sqlSessionManager;
 public class ProductDAO {
 	 private SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 	 //장바구니
-	public int addProduct(String item_name) {
+	public int addProduct(String product_name) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int row = session.insert("addProduct", item_name);
+		int row = session.insert("addProduct", product_name);
 		session.close();
 		return row;
 	}
 	//결제목록
-	public int showProduct(String user_id) {
+	public int showProduct(String member_id) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int info = session.selectOne("showProduct", user_id); // 경로 정확하게 >> TYPEALIASES >> ALIAS
+		int info = session.selectOne("showProduct", member_id); // 경로 정확하게 >> TYPEALIASES >> ALIAS
 		session.close();
 		return info;
 	}

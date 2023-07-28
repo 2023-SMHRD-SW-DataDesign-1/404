@@ -4,10 +4,10 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.mapper.ChatMapper">
 
-	<insert id="saveChating">
+<!-- 	<insert id="saveChating">
 		채팅방 넘버가 없어서 chat_no를 채팅방 넘버로 쓰려고 했는데 채팅방 넘버를 어떻게 만들지 고민
 		insert into chat(chat_no,nickname,other_member_nickname,text,time) values(chat_no=#{},nickname=#{nickname},other_member_nickname=#{otherMemberNickname},text=#{text},time=sysdate)
-	</insert>
+	</insert> -->
 
 
 
