@@ -188,7 +188,7 @@
                 <div class="feed_icon">
 
                     <!-- 좋아요 -->
-                    <div class="cursorPointer">
+                    <div class="cursorPointer" >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart"
                             viewBox="0 0 16 16">
                             <path
@@ -198,7 +198,6 @@
 
                     <!-- 댓글 -->
                     <div class="cursorPointer">
-
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat-square"
                             viewBox="0 0 16 16">
                             <path
@@ -216,15 +215,29 @@
                 <div class="feed_reply">
                     <p>댓글</p>
 					<div>
+					
 						<!-- 댓글 입력 -->
 						<form action="../CommentCon">
 							<img alt="프로필사진" src="../img2/p1.jpg">
-							<input type="hidden" name="feedNo" value="1"> 
-							<p class="text"><b>${nickname}</b> ${text} </p> 
-							<input type="text" name="text"> <input type="submit" values="완료">
+							<span>${nickname}</span>
+							<input type="hidden" name="feedNo" value="1">  
+							<input type="text" name="text"> <input type="submit" value="게시">
 						</form>
 					</div>
-
+					<div>
+						<!-- 댓글 출력 -->
+						<c:set var="comment_list" value="${FeedDAO.showFeedComment()}"></c:set>
+						<table id="list">
+							<c:forEach var="comment" items="${comment_list}"
+								varStatus="status">
+								<tr>
+									<td>${comment.nickname}</a>
+									</td>
+									<td>${comment.text}</a></td>
+								</tr>
+							</c:forEach>
+						</table>
+					</div>
 					<div>
                         <img src="../img/profile_img.png" alt="회원프로필사진">
                         <p class="reply_txt"> <b> suzy022 </b>제품 어디서 살 수 있나요? </p>

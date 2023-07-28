@@ -29,7 +29,8 @@ public class CommentCon extends HttpServlet {
 		System.out.println(nickname);
 		System.out.println(text);
 		
-		FeedCommentDTO1 fcdto = new FeedCommentDTO1(feedNo, "asd", "모모제작소", text, 0);
+		// 수정해야함
+		FeedCommentDTO1 fcdto = new FeedCommentDTO1(feedNo, "asd", "선빔" , text, 0);
 		FeedDAO1 fdao = new FeedDAO1();
 		
 		int row = fdao.saveComment(fcdto);
