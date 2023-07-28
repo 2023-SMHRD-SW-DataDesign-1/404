@@ -319,7 +319,7 @@ input.form-control {
     margin-right: 20px;
    
 }
-.feed_like, .feed_reply{
+.cursorPointer{
 	cursor: pointer;
 }
 

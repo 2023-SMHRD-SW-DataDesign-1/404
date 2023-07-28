@@ -36,5 +36,8 @@
 		SELECT F.*, P.PROFILE_IMAGE FROM Feed F INNER JOIN Follow FL ON F.NICKNAME = FL.FOLLOWING_NAME INNER JOIN Profile P ON F.NICKNAME = P.NICKNAME WHERE FL.NICKNAME = '#{nickname}' ORDER BY F.TIME DESC
   	</select>
   	
+  	<select id="getProfileImage" resultType="String">
+    SELECT profileImage FROM profile WHERE nickname = #{nickname}
+	</select>
 	
 </mapper>

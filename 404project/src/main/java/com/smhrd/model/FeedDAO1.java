@@ -119,5 +119,16 @@ public class FeedDAO1 {
 		return sfeed_list;
 
 	}
+	
+	public String getProfileImage(String nickname) {
+		
+        SqlSession session = sqlSessionFactory.openSession(true);
+        
+        String profileImage = session.selectOne("getProfileImage", nickname);
+        
+        session.close();
+        
+        return profileImage;
+    }
 
 }

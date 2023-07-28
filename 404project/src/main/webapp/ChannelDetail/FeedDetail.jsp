@@ -1,5 +1,8 @@
+<%@page import="com.smhrd.model.FeedCommentDTO1"%>
+<%@page import="com.smhrd.model.FeedDAO1"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
 
@@ -181,7 +184,7 @@
                 <div class="feed_icon">
 
                     <!-- 좋아요 -->
-                    <div>
+                    <div class="cursorPointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart"
                             viewBox="0 0 16 16">
                             <path
@@ -190,7 +193,7 @@
                     </div>
 
                     <!-- 댓글 -->
-                    <div>
+                    <div class="cursorPointer">
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat-square"
                             viewBox="0 0 16 16">
@@ -199,11 +202,7 @@
                         </svg>
                     </div>
 
-    
-
-
-
-                </div>
+				</div>
                 <div class="feed_like">
                     <p class="like_count"> <b>좋아요</b> 10개</p>
                 </div>
@@ -291,32 +290,6 @@
 				    }
 				});
 				
-				// 댓글입력
-				const commentIcon = document.querySelector('.bi-chat-square');
-				commentIcon.addEventListener('click', createCommentInput);
-				
-				function createCommentInput() {
-				    const commentSection = document.querySelector('.feed_reply');
-				    const existingCommentInput = commentSection.querySelector('input');
-				    if (existingCommentInput) {
-				        return;
-				    }
-
-				    const commentInput = document.createElement('input');
-				    commentInput.setAttribute('type', 'text');
-				    commentInput.setAttribute('placeholder', '댓글을 입력해주세요~');
-				    commentSection.appendChild(commentInput);
-
-				    commentInput.addEventListener('keyup', (event) => {
-				        if (event.key === 'Enter') {
-				            const commentText = event.target.value;
-				            const newComment = document.createElement('div');
-				            newComment.innerHTML = `<img src="../img/profile_img.png" alt="회원프로필사진"><p class="reply_txt"><b>Username</b>${commentText}</p>`;
-				            commentSection.appendChild(newComment);
-				            event.target.remove();
-				        }
-				    });
-				}
 				</script>
 
 </body>
