@@ -9,7 +9,7 @@
     </insert>
     
    <insert id="saveComment" parameterType="com.smhrd.model.FeedCommentDTO1"> 
-    	insert into feed_comment values (#{comment_no},#{feed_no},#{nickname},#{profileImage},#{text},sysdate)
+    	insert into feed_comment values (feed_comment_seq.nextval,#{feedNo},#{profileImage},#{nickname},#{text},#{likes},sysdate)
     </insert> 
 	
 	<select id="showFeedComment" resultType="com.smhrd.model.FeedCommentDTO1">
@@ -17,7 +17,7 @@
 	</select>
   	
   	<insert id="sumLikes" parameterType="com.smhrd.model.FeedDTO1">
-  		insert into feed(feed_no,nickname,likes) values ( #{feed_no},#{nickname},#{likes})
+  		insert into feed(feedNo,nickname,likes) values ( #{feedNo},#{nickname},#{likes})
   	</insert>
   	
   	<select id="selectLikes" resultType="int">

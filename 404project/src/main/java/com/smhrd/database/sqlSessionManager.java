@@ -17,6 +17,7 @@ public class sqlSessionManager {
 		try {			
 			String resource = "com/smhrd/database/mybatis-config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
+					
 			sqlSessionFactory =
 			  new SqlSessionFactoryBuilder().build(inputStream);
 			
