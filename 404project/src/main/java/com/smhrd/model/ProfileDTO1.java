@@ -12,10 +12,22 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ProfileDTO1 {
 	
-	@NonNull private String nickname;
+	private String nickname;
 	private String profileImage;
 	private String profileDescription;
 	private String bannerImage;
+	
+	public ProfileDTO1(String profileImage, String profileDescription, String bannerImage) {
+		super();
+		this.profileImage = profileImage;
+		this.profileDescription = profileDescription;
+		this.bannerImage = bannerImage;
+	}
+	
+	public ProfileDTO1(String nickname) {
+		super();
+		this.nickname = nickname;
+	}
 	
 	
 	

@@ -20,7 +20,7 @@ public class FeedLikeCon extends HttpServlet {
 		
 		String feed_no= request.getParameter("feed_no");
 		String nickname= request.getParameter("nickname");
-//		String repl = request.getParameter("repl");
+
 		
 		System.out.println(feed_no);
 		System.out.println(nickname);

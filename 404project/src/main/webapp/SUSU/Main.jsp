@@ -6,11 +6,15 @@
 
 <!-- JSTL 사용하기 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<<<<<<< HEAD
+<%@page import="com.smhrd.model.FeedDAO1"%>
+=======
 
 <!-- FeedDAO import하기 -->
 <%@page import="com.smhrd.model.FeedDAO1"%>
 
 
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
 <!DOCTYPE html>
 <html lang="en">
 
@@ -129,8 +133,13 @@
 	<!-- 피드 목록 -->
 	<div class="feed_container">
 		<c:set var="lfeed_list" value="${FeedDAO1.showAllLikesFeeds()}"></c:set>
+<<<<<<< HEAD
+		<c:set var="productlink_list" value="${ProductDAO.showProductLink()}"></c:set>
+		<c:set var="s_list" value="${FeedDAO1.showAllSubcriptionFeeds()}"></c:set>
+=======
 		<!--<c:set var="productlink_list" value="${ProductDAO.showProductLink()}"></c:set>-->
 		<!--<c:set var="s_list" value="${FeedDAO1.showAllSubcriptionFeeds()}"></c:set>-->
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
 
 		<!--1번 피드  -->
 		<!--좋아요순 피드 -->
@@ -153,7 +162,11 @@
 				<div class="feed-img">
 					<!--사진을 클릭하면 피드 상세화면으로 이동 -->
 					<a href="../ChannelDetail/FeedDetail.jsp"> <img
+<<<<<<< HEAD
+						src="../img/${lfeed_list.feedImage1}.jpg" class="card-img-top"
+=======
 						src="../img2/${lfeed_list.feedImage1}.jpg" class="card-img-top"
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
 						alt="피드 사진">
 					</a>
 				</div>
