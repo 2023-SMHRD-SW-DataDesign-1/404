@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+	pageEncoding="UTF-8"%>
 
 <!-- EL 표현식 실행 -->
 <%@ page isELIgnored="false"%>
 
 <!-- JSTL 사용하기 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!-- ProfileDAO import하기 -->
+<%@page import="com.smhrd.model.ProfileDAO1"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +75,7 @@
 
 				</div>
 
-			</form>
+		
 
 		</div>
 
@@ -121,24 +123,26 @@
 
 	</header>
 
+	<!-- 배너이미지, 프로필 이미지, 작가 소개글 데이터 전송 -->
+	<form action="UpdateProfileCon" method="post" enctype="multipart/form-data" >
+	
 	<!-- 브랜드 로고(배너) -->
 	<div id="banner">
 		<img src="../img/banner_img.PNG" alt="배너 기본이미지"
-			onclick="handleBannerClick()">
+			onclick="handleBannerClick()" name="bannerImage">
 	</div>
 	<input type="file" name="file" id="input" style="display: none;" />
 
 	<!-- 프로필 영역 -->
 	<div class="user-info-container">
 
-		<form action="">
 
 			<!-- 작가 소개 -->
 			<div>
 				<!-- 프로필 사진 -->
 				<div class="file-container" >
 
-					<img src="../img/profile_img.png" alt="user-profile" id="profile">
+					<img src="../img/profile_img.png" alt="user-profile" id="profile" name="profileImage">
 				</div>
 				<!-- 버튼 클릭시 파일 탐색기 실행 -->
 				<input type="file" name="file" id="file"   style="display: none;" />
@@ -151,7 +155,7 @@
 
 				<!-- 작가 소개글 -->
 				<div class="input">
-					<input type="text" value="작가 소개글" id="user-text">
+					<input type="text" value="작가 소개글" id="user-text" name="profileDescription">
 
 				</div>
 			
@@ -169,17 +173,17 @@
 			</div>
 
 			<div class="button">
-				<!-- 편집하기 버튼(페이지 이동 중지) -->
+				<!-- 편집하기 버튼(기능 중지) -->
 				<button type="button" id="edit" class="btn btn-light">편집하기</button>
 
 
 				<!-- 완료 버튼을 누르면 변경한 값이 적용되고 작가 채널메인으로 이동 -->
+				<!--**전송버튼** ../Seller/MychannelMain.jsp로 이동 -->
+				
+				<button type="submit" id="success" class="btn btn-dark">완료</button>
 				<!--**전송버튼**  -->
-
-				<button type="submit" id="success" class="btn btn-dark"
-					formaction="../Seller/MychannelMain.jsp">완료</button>
-
-				<!-- 게시물 추가(페이지 이동 중지) -->
+					
+				<!-- 게시물 추가(기능 중지) -->
 				<button type="button" id="add" class="btn btn-light">+</button>
 
 			</div>
