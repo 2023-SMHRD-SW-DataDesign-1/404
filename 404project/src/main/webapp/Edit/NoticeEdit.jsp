@@ -1,16 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>회원가입</title>
-    <link rel="stylesheet" type="text/css" href="JoinStyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 수정</title>
+
+
+    <!--jquery 사용하기  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- css 파일 연결 -->
+    <link rel="stylesheet" href="./NoticeEditStyle.css">
 </head>
 
 <body>
-    
+
     <header>
 
         <div class="logo">
@@ -23,7 +31,7 @@
 
         <div class="user-actions">
             <!-- 채팅 -->
-            <a href="../SUSU/Chat.jsp">
+            <a href="../1. SUSU/Chat.html">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chat-dots" viewBox="0 0 16 16">
@@ -35,7 +43,7 @@
 
             </a>
             <!-- 나의 채널 -->
-            <a href="../Seller/MychannelMain.jsp">
+            <a href="../Seller/MychannelMain.html">
 
                 <svg id="mychannel" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-instagram" viewBox="0 0 16 16">
@@ -45,7 +53,7 @@
             </a>
 
             <!-- 장바구니 -->
-            <a href="../Mypage/CartList.jsp">
+            <a href="../2. Mypage/CartList.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2"
                     viewBox="0 0 16 16">
                     <path
@@ -54,7 +62,7 @@
             </a>
 
             <!-- 마이페이지 -->
-            <a href="../Mypage/CartList.jsp">
+            <a href="../2. Mypage/CartList.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-person-gear" viewBox="0 0 16 16">
                     <path
@@ -65,66 +73,48 @@
 
     </header>
 
-    <div class="signup-container">
-        <h1>회원가입</h1>
-        <form action="/JoinControl" method="post" >
-            <div class="form-group">
-                <label for="id">아이디</label>
-                <input type="text" id="id" name="member_id" placeholder="아이디를 입력하세요" required>
-                <button type="button" id="id-check">중복확인</button>
-            </div>
-            <div class="form-group">
-                <label for="password">비밀번호</label>
-                <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">비밀번호 확인</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="비밀번호를 다시 입력하세요" required>
+    <!-- 공지사항 게시물 작성 -->
+    <div class="notice-board">
+
+        <!-- 공지사항 입력값 전송 -->
+        <form action="">
+
+            <!-- 공지사항 제목 -->
+            <div class="notice-title">
+                <input type="text" value="[공지]뜨개상품 배송안내">
             </div>
 
-            <div class="form-group">
-                <label for="nickname">닉네임</label>
-                <input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요" required>
-
-                <button type="button" id="nickname-check">중복확인</button>
+            <!-- 공지사항 텍스트 -->
+            <div class="notice-content">
+                <textarea name="notice-txt" cols="93%" rows="30%" spellcheck="false">기본 제품은 상품준비기간이 3-4일 정도 소요되며, 완성품은 7일 내에 배송될 예정입니다. 주문제작 제품은 상품준비기간이 7일~14일 정도 소요되며, 완성품은 7일 내에 배송될 예정입니다.
+                </textarea>
             </div>
 
+            <!-- 공지사항 파일 선택 -->
 
-
-            <div class="form-group">
-                <label for="gender">성별</label>
-                <input type="radio" name="gender" placeholder="male">남자
-                <input type="radio" name="gender" placeholder="female">여자
+            <!-- 공지사항 피드에서 올린 파일이 선택되어 있어야 함-->
+            <div class="notice-file">
+                <input class="upload-name" value="마켓.jpg" placeholder="첨부파일">
+                <label for="file">파일찾기</label>
+                <input type="file" id="file">
             </div>
 
-            <div class="form-group">
-                <label for="birthday">생일</label>
-                <input type="text" id="birthday" name="birthday" placeholder="1990-01-01" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phoneNum">휴대폰 번호</label>
-                <input type="text" id="phoneNum" name="phoneNum" placeholder="010-1234-5678" required>
-            </div>
-
-            <div class="form-group">
-                <label for="address">주소</label>
-                <input type="text" id="address" name="address" placeholder="주소를 입력하세요">
-            </div>
-
-            <div id="submit">
-                <a href="./Main.jsp">
-                    <button type="submit">가입하기</button>
-    
-                </a>
+            <div class="submit">
+                <button type="submit"><a href="../Seller/MyNotice.html">등록하기</a></button>
             </div>
         </form>
-        <p>이미 회원이신가요? <a href="./Login.jsp">로그인</a></p>
-
-
-    </div>
     </div>
 
+
+    <!-- 파일 이름 입력창에 넣어주는 js -->
+    <script>
+        $(document).ready(function () {
+            $("#file").on('change', function () {
+                var fileName = $(this).val().split('\\').pop();
+                $(".upload-name").val(fileName);
+            });
+        });
+    </script>
 
 </body>
 

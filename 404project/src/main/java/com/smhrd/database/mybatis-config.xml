@@ -2,7 +2,10 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
 <configuration>
+<<<<<<< HEAD
   <properties resource="com/smhrd/database/db.properties"></properties>
   <environments default="development">
     <environment id="development">
@@ -15,16 +18,30 @@
       </dataSource>
     </environment>
   </environments>
+=======
+	<properties resource="com/smhrd/database/db.properties"></properties>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
 
-  <mappers>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
 
-    <mapper resource="com/smhrd/mapper/FeedMapper1.xml"/>
-    <mapper resource="com/smhrd/mapper/FollowMapper1.xml"/>
-    <mapper resource="com/smhrd/mapper/MemberMapper1.xml"/>
-    <mapper resource="com/smhrd/mapper/NoticeMapper.xml"/>
-    <mapper resource="com/smhrd/mapper/ProfileMapper.xml"/>
-    <mapper resource="com/smhrd/mapper/ChatMapper.xml"/>
+	<mappers>
 
-    
-  </mappers>
+		<mapper resource="com/smhrd/mapper/FeedMapper1.xml" />
+		<mapper resource="com/smhrd/mapper/FollowMapper1.xml" />
+		<mapper resource="com/smhrd/mapper/MemberMapper1.xml" />
+		<mapper resource="com/smhrd/mapper/NoticeMapper.xml" />
+		<mapper resource="com/smhrd/mapper/ProfileMapper.xml" />
+		<mapper resource="com/smhrd/mapper/ChatMapper.xml" />
+
+	</mappers>
 </configuration>

@@ -2,12 +2,12 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.smhrd.mapper.FollowMapper">
+<mapper namespace="com.smhrd.mapper.FollowMapper1">
   
   
-	<insert id="follow" parameterType="com.smhrd.model.SubscriptionDTO">
+<!-- 	<insert id="follow" parameterType="com.smhrd.model.SubscriptionDTO">
 		insert into follow values(#{nickname},#{following_name})
-	</insert>
+	</insert> -->
 
 	<select id="showfolloingList" parameterType="String" resultType="String">
 		select following_name from follow where nickname=#{nickname}
@@ -15,5 +15,8 @@
 
   	<select id="showFollowerList" parameterType="String" resultType="String">
   		select nickname from follow where following=#{nickname}
+  	</select>
+  	  	<select id="showAllLikesFeeds" resultType="com.smhrd.model.FeedDTO1" >
+		SELECT F.*, P.PROFILE_IMAGE FROM Feed F INNER JOIN Profile P ON F.NICKNAME = P.NICKNAME ORDER BY F.LIKES DESC
   	</select>
 </mapper>

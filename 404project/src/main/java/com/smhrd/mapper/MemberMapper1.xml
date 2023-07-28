@@ -5,7 +5,27 @@
 <mapper namespace="com.smhrd.mapper.MemberMapper1">
 
 
+<<<<<<< HEAD
+=======
+<select id="login" parameterType="com.smhrd.model.MemberDTO1" resultType="com.smhrd.model.MemberDTO1" >
+select * from member where user_id = #{user_id} and password = #{password}
+</select>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
 
 
+<<<<<<< HEAD
+=======
+<insert id="join" parameterType="com.smhrd.model.MemberDTO1">
+insert into member values(#{user_id} , #{password} , #{nickname} , #{gender} , #{age} , #{address} , #{phone_number})
+</insert>
+
+<update id="update" parameterType="com.smhrd.model.MemberDTO1">
+ update member set password = #{password}, nickname = #{nickname}, age = #{age}, address = #{address}, phone_number = #{phone_number} where user_id = #{user_id}
+</update>
+
+<delete id="delete" parameterType="com.smhrd.model.MemberDTO1" >
+ delete from member where user_id = #{user_id}
+</delete>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
 
 </mapper>

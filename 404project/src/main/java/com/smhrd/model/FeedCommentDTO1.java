@@ -1,32 +1,38 @@
 package com.smhrd.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.sql.Timestamp;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
 public class FeedCommentDTO1 {
 
 	private int commentNo;
-    private int feedNo;
-    private String profileImage;
-    private String nickname;
-    private String text;
+	@NonNull private int feedNo;
+	@NonNull private String profileImage;
+	@NonNull private String nickname;
+	@NonNull private String text;
+	private int likes;
     private String time;
     
-	public void setFeedNo(int feedNo) {
+    public FeedCommentDTO1(int feedNo,String profileImage,String nickname, String text,int likes) {
+		super();
 		this.feedNo = feedNo;
-	}
-	public void setText(String text) {
+		this.profileImage= profileImage;
+		this.nickname= nickname;
+		this.likes = likes;
 		this.text = text;
 	}
 	
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-	
-	public String getProfileImage() {
-		return profileImage;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	
 }
+
+

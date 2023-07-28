@@ -1,8 +1,12 @@
+<%@page import="hong.FeedDTO"%>
+<%@page import="com.smhrd.model.FeedDTO1"%>
 <%@page import="com.smhrd.model.FeedCommentDTO1"%>
 <%@page import="com.smhrd.model.FeedDAO1"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!doctype html>
 <html lang="en">
 
@@ -201,7 +205,6 @@
                                 d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
                         </svg>
                     </div>
-
 				</div>
                 <div class="feed_like">
                     <p class="like_count"> <b>좋아요</b> 10개</p>
@@ -212,7 +215,17 @@
 <c:set var="comment_list" value="${FeedDAO.showFeedComment()}"></c:set>
                 <div class="feed_reply">
                     <p>댓글</p>
+					<div>
+						<!-- 댓글 입력 -->
+						<form action="../CommentCon">
+							<img alt="프로필사진" src="../img2/p1.jpg">
+							<input type="hidden" name="feedNo" value="1"> 
+							<p class="text"><b>${nickname}</b> ${text} </p> 
+							<input type="text" name="text"> <input type="submit" values="완료">
+						</form>
+					</div>
 
+<<<<<<< HEAD
                     <div>
     <table id = "list">
 	<c:forEach var="comment" items="${comment_list}" varStatus="status">
@@ -223,6 +236,11 @@
 		</tr>					
 	</c:forEach>
 </table>
+=======
+					<div>
+                        <img src="../img/profile_img.png" alt="회원프로필사진">
+                        <p class="reply_txt"> <b> suzy022 </b>제품 어디서 살 수 있나요? </p>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
                     </div>
 
                     <div>
@@ -247,58 +265,6 @@
 
         </div>
     </div>
-	<!-- 팔로우 -->
-	<script type="text/javascript">
-				$(document).ready(function() {
-					let showFollowerList = 0;
-				    let showFolloingList = 0;
-				    $('.btn.btn-dark').click(function() {
-				        // 팔로우 정보 생성
-				        var followData = {
-				            follower: 'follower_nickname',
-				            following: 'following_nickname'
-				        };
-				        // 서버에 팔로우 정보 전송
-				        $.ajax({
-				            url: 'follow',
-				            type: 'POST',
-				            data: followData,
-				            success: function(response) {
-				                // 서버에서 응답을 받았을 때의 처리
-				                if (response.success) {
-				                    $('.btn btn-light').text('팔로잉');
-				                    showFolloingList += 1;
-				                } else {
-				                	$('.btn.btn-dark').text('팔로우');
-				                	showFollowerList -= 1;
-				                }
-				            },
-				            error: function(error) {
-				                // 서버와 통신 중에 오류가 발생했을 때의 처리
-				                alert('서버와 통신 중에 오류가 발생했습니다.');
-				            }
-				        });
-				    });
-				});
-				// 좋아요
-				const heart = document.querySelector('.bi-heart');
-				const likeCount = document.querySelector('.like_count');
-				let count = 10;
-				heart.addEventListener('click', () => {
-				    heart.classList.toggle('filled');
-				    if (heart.classList.contains('filled')) {
-				        heart.setAttribute('fill', 'red');
-				        count += 1;
-				        likeCount.innerHTML = `<b>좋아요</b> ${count}개`;
-				    } else {
-				        heart.setAttribute('fill', 'currentColor');
-				        count -= 1;
-				        likeCount.innerHTML = `<b>좋아요</b> ${count}개`;
-				    }
-				});
-				
-				</script>
-
 </body>
 
 </html>

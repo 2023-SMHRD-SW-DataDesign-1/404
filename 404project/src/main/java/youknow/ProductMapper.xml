@@ -5,7 +5,7 @@
 <mapper namespace="youknow.ProductMapper">
   <!-- 리뷰,평점 저장 -->
   <insert id="saveReview" parameterType="com.smhrd.model.reviewDTO">
-  insert into product values(#{review_no},#{nickname},#{review},#{reviewpoint})
+  insert into product values(#{review_no}, #{nickname}, #{text}, #{score})
   </insert>  
     <!-- 리뷰,평점 출력 -->
   <select id="showReview" resultType="com.smhrd.model.reviewDTO">
@@ -13,15 +13,15 @@
   </select>
   
   <insert id="addProduct" parameterType="String">
-  insert into product(item_name) values(#{item_name}) 
+  insert into product(product_name) values(#{product_name}) 
   </insert>
 
- <select id="showProduct" parameterType="String" resultType="item_name">
-  select * from user_order where id = #{user_id}
+ <select id="showProduct" parameterType="String" resultType="product_name">
+  select * from orders where nickname = #{nickname}
  </select>
   
   <select id="searchProduct" parameterType="String" resultType="String" >
-  select * from product where item_name = like '${search}%'
+  select * from product where product_name = like '${search}%'
   </select>
   
 </mapper>
