@@ -16,4 +16,7 @@
   	<select id="showFollowerList" parameterType="String" resultType="String">
   		select nickname from follow where following=#{nickname}
   	</select>
+  	  	<select id="showAllLikesFeeds" resultType="com.smhrd.model.FeedDTO1" >
+		SELECT F.*, P.PROFILE_IMAGE FROM Feed F INNER JOIN Profile P ON F.NICKNAME = P.NICKNAME ORDER BY F.LIKES DESC
+  	</select>
 </mapper>
