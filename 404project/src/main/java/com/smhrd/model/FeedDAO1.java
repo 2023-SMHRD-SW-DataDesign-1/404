@@ -133,5 +133,15 @@ public class FeedDAO1 {
         
         return profileImage;
     }
+	
+	public int updateFeed(int feedNo) {
+		SqlSession session=sqlSessionFactory.openSession(true);
+		
+		int cnt = session.update("updateProfile", feedNo );
+		
+		session.close();
+					
+	return cnt;
+	}
 
 }
