@@ -67,10 +67,10 @@
 
     <div class="signup-container">
         <h1>회원가입</h1>
-        <form>
+        <form action="/JoinControl" method="post" >
             <div class="form-group">
                 <label for="id">아이디</label>
-                <input type="text" id="id" name="id" placeholder="아이디를 입력하세요" required>
+                <input type="text" id="id" name="member_id" placeholder="아이디를 입력하세요" required>
                 <button type="button" id="id-check">중복확인</button>
             </div>
             <div class="form-group">
