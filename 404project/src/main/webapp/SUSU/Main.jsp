@@ -6,7 +6,6 @@
 
 <!-- JSTL 사용하기 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<<<<<<< HEAD
 <%@page import="com.smhrd.model.FeedDAO1"%>
 =======
 
@@ -14,7 +13,6 @@
 <%@page import="com.smhrd.model.FeedDAO1"%>
 
 
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
 <!DOCTYPE html>
 <html lang="en">
 
@@ -133,13 +131,9 @@
 	<!-- 피드 목록 -->
 	<div class="feed_container">
 		<c:set var="lfeed_list" value="${FeedDAO1.showAllLikesFeeds()}"></c:set>
-<<<<<<< HEAD
 		<c:set var="productlink_list" value="${ProductDAO.showProductLink()}"></c:set>
 		<c:set var="s_list" value="${FeedDAO1.showAllSubcriptionFeeds()}"></c:set>
-=======
-		<!--<c:set var="productlink_list" value="${ProductDAO.showProductLink()}"></c:set>-->
-		<!--<c:set var="s_list" value="${FeedDAO1.showAllSubcriptionFeeds()}"></c:set>-->
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/404.git
+
 
 		<!--1번 피드  -->
 		<!--좋아요순 피드 -->
