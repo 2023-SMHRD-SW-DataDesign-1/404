@@ -129,8 +129,8 @@
 	<!-- 피드 목록 -->
 	<div class="feed_container">
 		<c:set var="lfeed_list" value="${FeedDAO1.showAllLikesFeeds()}"></c:set>
-		<c:set var="productlink_list" value="${ProductDAO.showProductLink()}"></c:set>
-		<c:set var="s_list" value="${FeedDAO1.showAllSubcriptionFeeds()}"></c:set>
+		<!--<c:set var="productlink_list" value="${ProductDAO.showProductLink()}"></c:set>-->
+		<!--<c:set var="s_list" value="${FeedDAO1.showAllSubcriptionFeeds()}"></c:set>-->
 
 		<!--1번 피드  -->
 		<!--좋아요순 피드 -->
