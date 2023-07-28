@@ -209,13 +209,20 @@
                 <div class="feed_date">
                     <p>2023년 7월 24일</p>
                 </div>
-
+<c:set var="comment_list" value="${FeedDAO.showFeedComment()}"></c:set>
                 <div class="feed_reply">
                     <p>댓글</p>
 
                     <div>
-                        <img src="../img/profile_img.png" alt="회원프로필사진">
-                        <p class="reply_txt"> <b> suzy022 </b>제품 어디서 살 수 있나요? </p>
+    <table id = "list">
+	<c:forEach var="comment" items="${comment_list}" varStatus="status">
+		<tr>
+			 <img src="../IMG2/${comment.image1}"> 
+			<td>${comment.nickname}</a> </td>
+			<td>${comment.text}</a></td>
+		</tr>					
+	</c:forEach>
+</table>
                     </div>
 
                     <div>

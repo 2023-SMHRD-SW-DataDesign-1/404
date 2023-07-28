@@ -6,7 +6,7 @@
 
 <!-- JSTL 사용하기 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@page import="com.smhrd.model.FeedDAO1"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,9 +124,9 @@
 	<!--@@@@@ 피드 출력 건들어보겠어! -->
 	<!-- 피드 목록 -->
 	<div class="feed_container">
-		<c:set var="lfeed_list" value="${FeedDAO.showAllLikesFeeds()}"></c:set>
+		<c:set var="lfeed_list" value="${FeedDAO1.showAllLikesFeeds()}"></c:set>
 		<c:set var="productlink_list" value="${ProductDAO.showProductLink()}"></c:set>
-		<c:set var="s_list" value="${FeedDAO.showAllSubcriptionFeeds()}"></c:set>
+		<c:set var="s_list" value="${FeedDAO1.showAllSubcriptionFeeds()}"></c:set>
 
 		<!--1번 피드  -->
 		<!--좋아요순 피드 -->
@@ -149,7 +149,7 @@
 				<div class="feed-img">
 					<!--사진을 클릭하면 피드 상세화면으로 이동 -->
 					<a href="../ChannelDetail/FeedDetail.jsp"> <img
-						src="../img/${lfeed_list.feed_image1}.jpg" class="card-img-top"
+						src="../img/${lfeed_list.feedImage1}.jpg" class="card-img-top"
 						alt="피드 사진">
 					</a>
 				</div>
