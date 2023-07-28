@@ -20,11 +20,9 @@ public class LoginControl extends HttpServlet {
 		// console에 프린트 할 값
 		System.out.println("member_id : " + member_id);
 		System.out.println("password : " + password);
-
 		// 3.login메소드 호출
 		// info = 로그인한 회원의 정보
 		MemberDTO info = new MemberDAO().login(new MemberDTO(member_id, password));
-
 		// 4.login성공했을 때 회원정보 유지
 		// 정보 유지 -> cookie&session
 		// session 객체 생성
@@ -35,9 +33,8 @@ public class LoginControl extends HttpServlet {
 			HttpSession session = request.getSession();
 			// session 저장소에 info 저장
 			session.setAttribute("info", info);
-
 			System.out.println("로그인 성공");
-		} else {
+		} else {  
 			System.out.println("로그인 실패");
 		}
 

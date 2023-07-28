@@ -21,7 +21,7 @@ public class JoinControl extends HttpServlet {
 		String gender = request.getParameter("gender");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String address = request.getParameter("address");
-		String phone_number = request.getParameter("phone_number");
+		String phone = request.getParameter("phone");
 		//console에 프린트
 		System.out.println("member_id :" + member_id);
 		System.out.println("password :" + password);
@@ -29,20 +29,20 @@ public class JoinControl extends HttpServlet {
 		System.out.println("gender :" + gender);
 		System.out.println("age :" + age);
 		System.out.println("address :" + address);
-		System.out.println("phone_number :" + phone_number);
+		System.out.println("phone :" + phone);
 
 		//join 메소드 
 		MemberDAO dao = new MemberDAO();		
-			int row = dao.join(new MemberDTO( member_id, password,nickname,gender,age,address,phone_number));
+			int row = dao.join(new MemberDTO(member_id, password, nickname,gender, age,address, phone));
 			System.out.println(row);
 			//4. 성공 실패 구분하기
 			String moveURL = null;
 			if(row > 0) {
-				response.sendRedirect("main.jsp");
+				response.sendRedirect("Main.jsp");
 				System.out.println("회원가입성공");
 			}else {
 				System.out.println("회원가입실패");
-				response.sendRedirect("join.jsp");
+				response.sendRedirect("Join.jsp");
 			}
 
 		
