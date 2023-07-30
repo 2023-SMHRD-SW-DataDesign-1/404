@@ -1,6 +1,5 @@
-<%@page import="org.apache.catalina.Session"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -20,7 +19,7 @@
             </a>
 
         </div>
-           
+
         <div class="user-actions">
             <!-- 채팅 -->
             <a href="../SUSU/Chat.jsp">
@@ -69,11 +68,7 @@
 
     <div class="login-container">
         <h1>로그인</h1>
-<<<<<<< HEAD
-        <form action="LoginCon" method="post">
-=======
         <form action="../LoginController" method="post" >
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/404-change-.git
             <div class="form-group">
                 <label for="id">아이디</label>
                 <input type="text" id="id" name="member_id" required>
@@ -88,24 +83,7 @@
         <div class="line"></div>
         <div class="sns">
 
-
-
-
-            <a href="" id="naver"><img
-                    src="https://m.joyandroma.com/moa/img/default/login_naver.png"
-                    alt="naver_logo"></a>
-         <!--     <a href="" id="kakao"><img src="https://cdn.imweb.me/thumbnail/20220403/a8e484f2dfe39.png"
-                    alt="kakao_logo"></a>-->
-                    <a onclick="kakaoLogin();" > <img alt="카카오톡로그인이미지" src="https://cdn.imweb.me/thumbnail/20220403/a8e484f2dfe39.png"></a>
-            <a href="" id="google"><img
-                    src="https://i.pinimg.com/originals/a7/53/aa/a753aab7becfdde277e000be2350801f.png"
-                    alt="google_logo"></a>
-        </div>
-<!-- sns로그인 테스트 공간-->
-<!-- 카카오 스크립트 -->
-<!-- <a onclick="kakaoLogin();" > <img alt="카카오톡로그인이미지" src="https://cdn.imweb.me/thumbnail/20220403/a8e484f2dfe39.png"></a> -->
-
-<!-- 카카오 스크립트 -->
+<!-- 카카오 로그인 스크립트 -->
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
 <script>
@@ -136,25 +114,14 @@ function kakaoLogin() {
       },
     })
   }
-//카카오로그아웃  
-function kakaoLogout() {
-    if (Kakao.Auth.getAccessToken()) {
-      Kakao.API.request({
-        url: '/v1/user/unlink',
-        success: function (response) {
-        	console.log(response)
-        	location.href="Login.jsp";
-        },
-        fail: function (error) {
-          location.href="Login.jsp";
-        	console.log(error)
-        },
-      })
-      Kakao.Auth.setAccessToken(undefined)
-    }
-  }  
+
 </script>
-<!-- sns 로그인 테스트 공간-->
+ <!-- 카카오 로그인 스크립트 -->   
+            <a onclick="kakaoLogin();" id="kakao"><img src="https://cdn.imweb.me/thumbnail/20220403/a8e484f2dfe39.png"
+                    alt="kakao_logo"></a>
+            
+        </div>
+
 
         <div id="submit">
             <!-- <a href="./Main.jsp"> -->
