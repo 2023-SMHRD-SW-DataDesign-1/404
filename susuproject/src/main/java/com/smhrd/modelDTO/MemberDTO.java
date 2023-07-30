@@ -1,4 +1,4 @@
-package com.smhrd.model;
+package com.smhrd.modelDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
