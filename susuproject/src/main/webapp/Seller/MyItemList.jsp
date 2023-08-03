@@ -120,7 +120,7 @@
             <!-- 프로필 사진 -->
             <img src="../img/profile_img.png" alt="user-profile">
             <!-- 작가 닉네임 -->
-            <p id="nickname">작가 닉네임</p>
+            <p id="nickname">aaa</p>
 
             <!-- 작가 소개글 -->
             <p>작가 소개글</p>
@@ -198,7 +198,7 @@
                 <div class="card">
                     <a href="../Item/ItemDetail.jsp">
 
-                        <img src="../img/item_img.jpg" class="card-img-top" alt="...">
+         <img src="../img/item_img.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-title">상품명</p>
                             <p class="card-text">상품가격</p>
@@ -239,6 +239,7 @@
                             <p class="card-text">★4.5</p>
                             
                         </div>
+                        
                     </a>
                 </div>
 

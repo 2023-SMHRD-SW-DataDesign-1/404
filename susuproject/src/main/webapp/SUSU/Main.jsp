@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.modelDTO.MemberDTO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.modelDAO.ProductDAO"%>
 <%@page import="com.smhrd.modelDTO.ProductDTO"%>
@@ -51,6 +52,7 @@
 
       <a href="../SUSU/JoinMain.jsp">회원가입</a> <a href="../SUSU/Login.jsp">로그인</a>
 
+
    </div>
    <header class="header">
       <!-- 로고 -->
@@ -83,12 +85,12 @@
          </form>
 
       </div>
-
+'
       <!-- 메뉴 -->
       <div class="user-actions">
          <!-- 채팅 -->
-         <%String nickname = (String) session.getAttribute("nickname"); %>
-         <a href="../SUSU/LiveChatPage.jsp?nickname=<%=nickname %>"> <svg
+    <% String nickname = "보라보라"; %>
+         <a href="../SUSU/LiveChatPage.jsp"> <svg
                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
                                 <path
@@ -99,7 +101,7 @@
 
          </a>
          <!-- 나의 채널 -->
-         <a href="../Seller/MychannelMain.jsp"> <svg id="mychannel"
+         <a href="../Seller/MychannelMain.jsp?nickname=<%=nickname%>"> <svg id="mychannel"
                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
                                 <path
@@ -117,7 +119,7 @@
          </a>
 
          <!-- 마이페이지 -->
-         <a href="../Mypage/CartList.jsp"> <svg
+         <a href="../Mypage/CartList.jsp?nickname=<%=nickname%>"> <svg
                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                fill="currentColor" class="bi bi-person-gear" viewBox="0 0 16 16">
                                 <path
@@ -131,8 +133,6 @@
 
 <% 
 
-
-
 FeedDTO fdto = new FeedDTO();
 FeedDAO fdao = new FeedDAO();
 ArrayList<FeedDTO> lfeed_list = fdao.showAllLikesFeeds();
@@ -144,45 +144,42 @@ ArrayList<FeedDTO> lfeed_list = fdao.showAllLikesFeeds();
    <!--@@@@@ 피드 출력 건들어보겠어! -->
    <!-- 피드 목록 -->
    <div class="feed_container">
- <%
-     // <c:set var="productlink_list" value="${ProductDAO.showProductLink()}"></c:set>
-     // <c:set var="s_list" value="${FeedDAO.showAllSubcriptionFeeds()}"></c:set>
-     // <c:set var="lfeed_list" value="${FeedDAO.showAllLikesFeeds()}"></c:set>
-%>
+
 
       <!--1번 피드  -->
       <!--좋아요순 피드 -->
       <!-- 피드반복시작 -->
 
+         <div class="main_feed">
  <%   for(int i = 35; i>0; i--){  // <c:forEach begin="1" end="40">%>
  
 <% System.out.println(lfeed_list.get(i).getFeed_no()); %>
 <% System.out.println(lfeed_list.get(i).getNickname()); %>
 <% System.out.println(lfeed_list.get(i).getFeed_image1()); %>
-<% System.out.println(lfeed_list.get(i).getText()); %>
+<% System.out.println(lfeed_list.get(i).getText());
+   System.out.println("------");%>
 <%  String txt ;
-	if(lfeed_list.get(i).getText() ==null ){
-		txt = " ";
+   if(lfeed_list.get(i).getText() ==null ){
+      txt = " ";
 }else{
-	txt = lfeed_list.get(i).getText();
+   txt = lfeed_list.get(i).getText();
 }
-	
-	%>
-         <div class="main_feed">
+   
+   %>
 
             <!-- 프로필 정보를 클릭하면 채널메인 화면으로 이동 -->
             <div class="profile">
-				<input type="hidden" value="<%=lfeed_list.get(i).getFeed_no() %>"> 
+            <input type="hidden" value="<%=lfeed_list.get(i).getFeed_no() %>"> 
                <a href="../Channel/ChannelMain.jsp"> <img id="profile-img"
                   src="../img/profile_img.png" alt="프로필 사진"> <span
-                  class="nickname"><%=lfeed_list.get(i).getNickname()   %></span>
+                  class="nickname"><%=lfeed_list.get(i).getNickname()  %></span>
                </a>
             </div>
 
             <!-- 피드 이미지 -->
             <div class="feed-img">
                <!--사진을 클릭하면 피드 상세화면으로 이동 -->
-               <a href="../ChannelDetail/FeedDetail.jsp"> 
+               <a href="../ChannelDetail/FeedDetail.jsp?feed_no=<%=lfeed_list.get(i).getFeed_no() %>">  
                <img src="../img2/<%= lfeed_list.get(i).getFeed_image1() %>.jpg" class="card-img-top" alt="피드 사진">
                </a>
             </div>
@@ -191,7 +188,7 @@ ArrayList<FeedDTO> lfeed_list = fdao.showAllLikesFeeds();
             <div class="feed-text">
 
                <a href="../ChannelDetail/FeedDetail.jsp">
-                  <p><%=txt %>></p>
+                  <p><%=txt %></p>
                </a>
             </div>
 
@@ -205,7 +202,9 @@ ArrayList<ProductDTO>  item_link = pdao.showItemLink(lfeed_list.get(i).getFeed_n
 <% System.out.println( item_link.get(i).getProduct_no()); %>
 <% System.out.println( item_link.get(i).getProduct_image1()); %>
 <% System.out.println( item_link.get(i).getProduct_name()); %>
-<% System.out.println( item_link.get(i).getProduct_price()); %>
+<% System.out.println( item_link.get(i).getProduct_price());
+   System.out.println("------");
+%>
             <!-- 상품상세페이지 연결-->
             <div class="feed-info">
                
@@ -220,7 +219,7 @@ ArrayList<ProductDTO>  item_link = pdao.showItemLink(lfeed_list.get(i).getFeed_n
                            <!-- 상품이미지 -->
                            <a href="../Item/ItemDetail.jsp?Product_no=<%=item_link.get(i).getProduct_no()%>"> 
                               <div class="item-img">
-								<input type="hidden" value="<%=item_link.get(i).getProduct_no()  %>">
+                        <input type="hidden" value="<%=item_link.get(i).getProduct_no()  %>">
                                  <img
                                     src="../img2/<%= item_link.get(i).getProduct_image1()%>.jpg "
                                     alt="상품사진">

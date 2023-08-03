@@ -124,8 +124,8 @@ I
             <!-- 프로필 사진 -->
             <img src="../img/profile_img.png" alt="user-profile">
             <!-- 작가 닉네임 -->
-    <%String nickname = (String) session.getAttribute("nickname");%>
-            <p id="nickname"><%=nickname %></p>
+<%    String nickname = "aaa";  %> 
+            <p id="nickname"><%= nickname %></p>
             <!-- 작가 소개글 -->
             <p>작가 소개글</p>
         </div>

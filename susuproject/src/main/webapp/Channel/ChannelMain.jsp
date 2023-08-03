@@ -124,7 +124,7 @@
             <img src="../img/profile_img.png" alt="user-profile">
             <!-- 작가 닉네임 -->
 <%String nickname = (String) session.getAttribute("nickname");%>
-            <p id="nickname"><%=nickname %></p>
+            <p id="nickname">aaa</p>
 
             <!-- 작가 소개글 -->
             <p>작가 소개글</p>
@@ -195,9 +195,9 @@
             <div class="col-lg-4">
                 <div class="feed">
 
-                    <a href="../ChannelDetail/FeedDetail.jsp?feedNo=<%=mfeed_list.get(i).getFeedNo() %>">
+                    <a href="../ChannelDetail/FeedDetail.jsp?feedNo=<%=mfeed_list.get(i).getFeed_no() %>">
 
-                        <img src="../img/<%= mfeed_list.get(i).getFeedImages() %>.jpg" alt="post_img">
+                        <img src="../img/<%= mfeed_list.get(i).getFeed_image1() %>.jpg" alt="post_img">
                     </a>
                 </div>
             </div>

@@ -151,7 +151,7 @@
 				<!-- 작가 닉네임 -->
 				<div class="input">
 
-<%String nickname = (String) session.getAttribute("nickname");%>
+<%String nickname = "aaa" ;%>
             <p id="nickname"><%=nickname %></p>
 
 				<!-- 작가 소개글 -->

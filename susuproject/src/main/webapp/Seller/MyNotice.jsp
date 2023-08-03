@@ -127,7 +127,7 @@
             <!-- 작가 닉네임 -->
 <p id="nickname">
     <% //String nickname = (String) session.getAttribute("nickname"); @@지홍 로그인했을때 사용할것  %>
-	<%String nickname="abc"; %>
+	<%String nickname="aaa"; %>
     <%= nickname %>
 </p>
 

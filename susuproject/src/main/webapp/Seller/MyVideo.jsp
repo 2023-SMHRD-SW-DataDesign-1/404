@@ -121,7 +121,7 @@
             <!-- 프로필 사진 -->
             <img src="../img/profile_img.png" alt="user-profile">
             <!-- 작가 닉네임 -->
-            <p id="nickname">작가 닉네임</p>
+            <p id="nickname">aaa</p>
 
             <!-- 작가 소개글 -->
             <p>작가 소개글</p>

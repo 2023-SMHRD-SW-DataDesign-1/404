@@ -20,8 +20,24 @@
 
 
 </head>
-
 <body>
+<!-- 
+<form action="" method="post">
+ <input type="text" value="1" name="cart_no">
+ <input type="text" value="1" name="product_no">
+ <input type="text" value="4000" name="cart_price">
+ <input type="text" value="1" name="cart_quantity">
+ <input type="text" value="보라보라" name="nickname">
+<button type="submit">완료</button>
+</form>
+ -->
+<script type="text/javascript">
+$('input[name=cart_no]').attr('value',"1");
+$('input[name=product_no]').attr('value',"1");
+$('input[name=cart_price]').attr('value',"4000");
+$('input[name=cart_quantity]').attr('value',"1");
+$('input[name=nickname]').attr('value',"보라보라");
+</script>
 
 	<header>
 
@@ -108,35 +124,35 @@
 					<tr class="cart__list__detail">
 						<td><input type="checkbox"></td>
 						<td><img
-							src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889"
-							alt="상품이미지"></td>
+							src="http://localhost:8088/susuproject/img2/p35.jpg"
+							alt="상품이미지"></td>   <!--  https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889-->
 						<td><a href="../Item/ItemDetail.jsp">
-								<p>[banul wear] 슬림핏 가디건</p>
-						</a> <span class="price">23,400원</span></td>
+								<p>꽃 한 송이 백참</p>
+						</a> <span class="price" name="cart_price">4000원</span></td>
 						
 						<td class="cart__list__option">
-							<p>민트(size.S)/1개</p> <a href=" Item/ItemDetail.jsp">
+							<p>블랙/1개</p> <a href=" Item/ItemDetail.jsp">
 								<button class="cart__list__optionbtn">주문수정</button>
 						</a>
 						</td>
-						<td><span class="price">23,400원</span><br></td>
+						<td><span class="price" >4000원</span><br></td>
 						<td>무료</td>
 					</tr>
 
 					<tr class="cart__list__detail">
 						<td><input type="checkbox"></td>
 						<td><img
-							src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889"
+							src="http://localhost:8088/susuproject/img2/p35.jpg"
 							alt="상품이미지"></td>
 						<td><a href="../Item/ItemDetail.jsp">
-								<p>[banul wear] 슬림핏 가디건</p>
-						</a> <span class="price">23,400원</span></td>
+								<p>꽃 한 송이 백참</p>
+						</a> <span class="price">4000원</span></td>
 						<td class="cart__list__option">
-							<p>민트(size.S)/1개</p> <a href=" Item/ItemDetail.jsp">
+							<p>블랙/1개</p> <a href=" Item/ItemDetail.jsp">
 								<button class="cart__list__optionbtn">주문수정</button>
 						</a>
 						</td>
-						<td><span class="price">23,400원</span><br></td>
+						<td><span class="price">4000원</span><br></td>
 						<td>무료</td>
 					</tr>
 				</tbody>

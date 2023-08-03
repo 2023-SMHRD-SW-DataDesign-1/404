@@ -55,6 +55,7 @@
                 </svg>
             </a>
 
+
             <!-- 장바구니 -->
             <a href="../Mypage/CartList.jsp">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2"
@@ -65,7 +66,7 @@
             </a>
 
             <!-- 마이페이지 -->
-            <a href="../Mypage/CartList.jsp">
+            <a href="../Mypage/Cartist.jsp">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-person-gear" viewBox="0 0 16 16">
                     <path
@@ -93,7 +94,7 @@
         <table class="pay__list">
 
             <!-- 주문하기 버튼을 누르면 주문페이지에 주문정보 전송 -->
-            <form action="">
+            <form action="../Item/Orders.jsp">
                 <thead>
                     <tr>
                         <td colspan="2">상품정보</td>
@@ -104,35 +105,35 @@
                 </thead>
                 <tbody>
                     <tr class="pay__list__detail">
-                        <td><img src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889" alt="상품이미지"></td>
+                        <td><img src="http://localhost:8088/susuproject/img2/p35.jpg" alt="상품이미지"></td>
                         <td>
                             <a href="../Item/ItemDetail.jsp">
-                                <p>[banul wear] 슬림핏 가디건</p>
+                                <p>꽃 한송이 백참</p>
                             </a>
                             
-                            <span class="price">23,400원</span>
+                            <span class="price">4000원</span>
                         </td>
                         <td class="pay__list__option">
-                            <p>민트(size.S)/1개</p>
+                            <p>블랙/1개</p>
                         </td>
-                        <td><span class="price">23,400원</span><br>
+                        <td><span class="price">4000원</span><br>
                         </td>
                         <td>무료</td>
                     </tr>
 
                     <tr class="pay__list__detail">
-                        <td><img src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889" alt="상품이미지"></td>
+                        <td><img src="http://localhost:8088/susuproject/img2/p35.jpg" alt="상품이미지"></td>
                         <td>
                             <a href="../Item/ItemDetail.jsp">
-                                <p>[banul wear] 슬림핏 가디건</p>
+                                <p>꽃 한송이 백참</p>
                             </a>
                             
-                            <span class="price">23,400원</span>
+                            <span class="price">4000원</span>
                         </td>
                         <td class="pay__list__option">
-                            <p>민트(size.S)/1개</p>
+                            <p>블랙/1개</p>
                         </td>
-                        <td><span class="price">23,400원</span><br>
+                        <td><span class="price">4000원</span><br>
                         </td>
                         <td>무료</td>
                     </tr>

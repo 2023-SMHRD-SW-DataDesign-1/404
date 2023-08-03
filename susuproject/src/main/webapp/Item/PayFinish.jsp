@@ -73,7 +73,7 @@
         <!-- 메뉴 -->
         <div class="user-actions">
             <!-- 채팅 -->
-            <a href="../SUSU/Chat.jsp">
+            <a href="../SUSU/LiveChatPage.jsp">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chat-dots" viewBox="0 0 16 16">
@@ -95,7 +95,7 @@
             </a>
 
             <!-- 장바구니 -->
-            <a href="../Mypage/CartList.jsp">
+            <a href="../Mypage/CarList.jsp">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2"
                     viewBox="0 0 16 16">
                     <path
@@ -104,7 +104,7 @@
             </a>
 
             <!-- 마이페이지 -->
-            <a href="../Mypage/CartList.jsp">
+            <a href="../Mypage/CarList.jsp">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-person-gear" viewBox="0 0 16 16">
                     <path
@@ -127,7 +127,7 @@
         <span>수수한 사람들을 이용해주셔서 감사합니다.</span>
 
         <div>
-            <a href="../Mypage/CartList.jsp">
+            <a href="../Mypage/CarList.jsp">
 
                 <button type="text">주문내역 확인하기</button>
             </a>

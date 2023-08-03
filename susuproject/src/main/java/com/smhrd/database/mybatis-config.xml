@@ -12,7 +12,8 @@
       <typeAlias type="com.smhrd.modelDTO.MemberDTO" alias="MemberDTO" />
       <typeAlias type="com.smhrd.modelDTO.FollowDTO" alias="FollowDTO" />        
       <typeAlias type="com.smhrd.modelDTO.NoticeDTO" alias="NoticeDTO" />        
-      <typeAlias type="com.smhrd.modelDTO.ProductDTO" alias="ProductDTO" />        
+      <typeAlias type="com.smhrd.modelDTO.ProductDTO" alias="ProductDTO" /> 
+      <typeAlias type="com.smhrd.modelDTO.CartDTO" alias="CartDTO" />       
  
 
    </typeAliases>

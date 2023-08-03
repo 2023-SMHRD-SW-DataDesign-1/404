@@ -110,13 +110,13 @@
 
         <div class="item-img">
 
-            <img src="https://www.banul.co.kr/shopimages/banulfren/141000000003.jpg?1631086889" alt="상품이미지">
+            <img src="../img2/p35.jpg" alt="상품이미지">
         </div>
 
         <div class="item-info">
             <ul>
-                <li class="item-name">[banul wear] 슬림핏 가디건</li>
-                <li class="item-price"><b>23,400원</b></li>
+                <li class="item-name">🌻꽃 한송이 백참🌻</li>
+                <li class="item-price"><b>4,000원</b></li>
             </ul>
 
 
@@ -128,23 +128,13 @@
 
                     <option value="">옵션 선택</option>
 
-                    <option value="0" title="민트(size. S)" matrix="1" price="23,400" sto_id="1" dis_sto_price=""
-                        dis_opt_price="" org_opt_price="0" sto_state="SALE">민트(size. S)</option>
+                    <option value="0" title="블랙" matrix="1" price="4000" sto_id="1" dis_sto_price=""
+                        dis_opt_price="" org_opt_price="0" sto_state="SALE">블랙</option>
 
-                    <option value="1" title="민트(size. M)" matrix="2" price="23,400" sto_id="2" dis_sto_price=""
-                        dis_opt_price="" org_opt_price="0" sto_state="SOLDOUT">민트(size. M)</option>
+                    <option value="1" title="화이트" matrix="2" price="4000" sto_id="2" dis_sto_price=""
+                        dis_opt_price="" org_opt_price="0" sto_state="SOLDOUT">화이트</option>
 
-                    <option value="2" title="버건디(size. S)" matrix="3" price="23,400" sto_id="3" dis_sto_price=""
-                        dis_opt_price="" org_opt_price="0" sto_state="SALE">버건디(size. S)</option>
-
-                    <option value="3" title="버건디(size. M)" matrix="4" price="23,400" sto_id="4" dis_sto_price=""
-                        dis_opt_price="" org_opt_price="0" sto_state="SALE">버건디(size. M)</option>
-
-                    <option value="4" title="블랙(size. S)" matrix="5" price="23,400" sto_id="5" dis_sto_price=""
-                        dis_opt_price="" org_opt_price="0" sto_state="SALE">블랙(size. S)</option>
-
-                    <option value="5" title="블랙(size. M)" matrix="6" price="23,400" sto_id="6" dis_sto_price=""
-                        dis_opt_price="" org_opt_price="0" sto_state="SOLDOUT">블랙(size. M)</option>
+                 
 
                 </select>
 
@@ -152,16 +142,18 @@
             </div>
 
             <!-- 장바구니, 주문하기 버튼 -->
-            <div class="button">
+               
+                   
+                    <div class="button">
                 <!-- 장바구니 버튼 -->
                 <!-- js로 아래 페이지로 데이터 전송하는 코드를 작성함, 확인 후 a 태그 지워도 됨 -->
-                <a href="../Mypage/CartList.jsp"> <button type="submit" id="cart">장바구니</button></a>
+                
+                  <button type="submit" id="cart"> <a href="../Mypage/CartList.jsp"  id="none">장바구니</a></button>
                 
                 <!-- js로 아래 페이지로 데이터 전송하는 코드를 작성함, 확인 후 a 태그 지워도 됨 -->
                 <!-- 주문하기 버튼 -->
                 <a href="./Order.jsp"> <button type="submit" id="order">주문하기</button></a>
             </div>
-
 
         </div>
 

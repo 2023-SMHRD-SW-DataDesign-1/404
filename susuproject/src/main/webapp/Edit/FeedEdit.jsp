@@ -84,7 +84,7 @@
 		</div>
 
 	</header>
-
+   <!-- 수정 1 -->
 	<div class="feed-board">
 	<c:set var="myFeed" value="${FeedDAO1.showMyFeeds()}"></c:set>
 		<!-- 피드 번호 -->
